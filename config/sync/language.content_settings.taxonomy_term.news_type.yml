@@ -1,0 +1,13 @@
+uuid: c79baebd-f250-40ae-97b5-20c473d346b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_type
+_core:
+  default_config_hash: RmyxnEVBSd4-X3xUCF5Mx4KeFgqnZOj8YlAKwH7ev2o
+id: taxonomy_term.news_type
+target_entity_type_id: taxonomy_term
+target_bundle: news_type
+default_langcode: site_default
+language_alterable: false

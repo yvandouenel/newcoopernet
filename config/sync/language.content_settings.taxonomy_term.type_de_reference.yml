@@ -1,0 +1,11 @@
+uuid: cacc8dee-4b57-4714-8fce-cb36d17e76f4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.type_de_reference
+id: taxonomy_term.type_de_reference
+target_entity_type_id: taxonomy_term
+target_bundle: type_de_reference
+default_langcode: site_default
+language_alterable: false

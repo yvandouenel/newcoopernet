@@ -1,0 +1,22 @@
+uuid: cfdb00e8-6c0e-4c86-a428-ba8430905215
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - coopernet
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: coopernet_content
+theme: coopernet
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  provider: system
+  label_display: '0'
+visibility: {  }

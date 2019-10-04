@@ -1,0 +1,31 @@
+uuid: a7e08e01-57f1-471e-b6df-f5a6bf0d8564
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fadc3bf5-b350-4036-8f65-a068a24f9811'
+  module:
+    - block_content
+    - system
+  theme:
+    - coopernet
+id: certifregion
+theme: coopernet
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:fadc3bf5-b350-4036-8f65-a068a24f9811'
+settings:
+  id: 'block_content:fadc3bf5-b350-4036-8f65-a068a24f9811'
+  label: 'Certif Région'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /formation/label-certif-region
+    negate: false
+    context_mapping: {  }

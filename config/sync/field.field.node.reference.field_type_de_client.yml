@@ -1,0 +1,30 @@
+uuid: 8d8e26de-d69f-4d4d-9f8a-7e261c530ad0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_de_client
+    - node.type.reference
+    - taxonomy.vocabulary.type_de_reference
+_core:
+  default_config_hash: Jq3mgDKDrsyE4FHBx7k24ZzMIRSv5a-wKIW19vZS4Qg
+id: node.reference.field_type_de_client
+field_name: field_type_de_client
+entity_type: node
+bundle: reference
+label: 'Type de client'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_de_reference: type_de_reference
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

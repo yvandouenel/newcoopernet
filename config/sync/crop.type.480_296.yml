@@ -1,0 +1,12 @@
+uuid: 0a7f6ee5-4459-40cd-ac26-b0fdaaee8247
+langcode: fr
+status: true
+dependencies: {  }
+label: 480×296
+id: '480_296'
+description: ''
+aspect_ratio: '16:9'
+soft_limit_width: 480
+soft_limit_height: 270
+hard_limit_width: 480
+hard_limit_height: 270

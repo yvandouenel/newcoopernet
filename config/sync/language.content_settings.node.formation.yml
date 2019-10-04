@@ -1,0 +1,13 @@
+uuid: 773e0439-7952-4194-8bb4-43c110b74ca8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.formation
+_core:
+  default_config_hash: lN_zQwViFWl9EoOa1vEU-9ma7p_EoUilVLzKAZr8Rb4
+id: node.formation
+target_entity_type_id: node
+target_bundle: formation
+default_langcode: site_default
+language_alterable: false

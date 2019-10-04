@@ -1,0 +1,33 @@
+uuid: 82483e61-916e-43fd-8b4e-8206d38b784b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.page_two_cols.field_col_1
+    - field.field.node.page_two_cols.field_col_2
+    - node.type.page_two_cols
+  module:
+    - text
+    - user
+id: node.page_two_cols.default
+targetEntityType: node
+bundle: page_two_cols
+mode: default
+content:
+  field_col_1:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_col_2:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true
+  links: true

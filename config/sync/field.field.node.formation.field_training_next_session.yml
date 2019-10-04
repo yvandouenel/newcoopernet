@@ -1,0 +1,26 @@
+uuid: 9dac9d0d-052a-4a27-96d2-553c01b99288
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_next_session
+    - node.type.formation
+  module:
+    - text
+_core:
+  default_config_hash: 5qIo5Vo4kiHQs9b5mRHBSx2pW7L08b5r5WUgf0dDCkY
+id: node.formation.field_training_next_session
+field_name: field_training_next_session
+entity_type: node
+bundle: formation
+label: 'Prochaine session'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Nous contacter</p>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

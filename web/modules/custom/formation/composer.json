@@ -1,0 +1,7 @@
+{
+  "name": "drupal/formation",
+  "description": "Custom news for coopernet",
+  "type": "drupal-module",
+  "homepage": "https://www.coopernet.fr/formation",
+  "license": "GPL-2.0+"
+}

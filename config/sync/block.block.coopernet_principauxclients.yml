@@ -1,0 +1,40 @@
+uuid: f20169b7-9e66-4e3b-be3a-404182485858
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:85ae90f1-73c4-45b1-88ae-9bb1b5f88de3'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - coopernet
+id: coopernet_principauxclients
+theme: coopernet
+region: clients
+weight: 0
+provider: null
+plugin: 'block_content:85ae90f1-73c4-45b1-88ae-9bb1b5f88de3'
+settings:
+  id: 'block_content:85ae90f1-73c4-45b1-88ae-9bb1b5f88de3'
+  label: 'Principaux clients'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/formation/*'
+    negate: true
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

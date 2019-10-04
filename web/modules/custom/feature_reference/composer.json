@@ -1,0 +1,7 @@
+{
+  "name": "drupal/feature_reference",
+  "description": "Custom reference for coopernet",
+  "type": "drupal-module",
+  "homepage": "https://www.coopernet.fr/references",
+  "license": "GPL-2.0+"
+}

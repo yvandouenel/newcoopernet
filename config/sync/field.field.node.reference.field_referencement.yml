@@ -1,0 +1,25 @@
+uuid: 0652562d-ae96-40e7-b5a5-7445a38e776f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencement
+    - node.type.reference
+  module:
+    - metatag
+_core:
+  default_config_hash: d6Apyn9N-pQLZ5vWz4m1jCllxgsIf4TbAzyuIcLt3MY
+id: node.reference.field_referencement
+field_name: field_referencement
+entity_type: node
+bundle: reference
+label: Référencement
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

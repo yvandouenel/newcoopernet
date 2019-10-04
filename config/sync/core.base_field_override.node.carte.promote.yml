@@ -1,0 +1,24 @@
+uuid: 370d91ab-b168-4bde-935d-318e3af4e4a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.carte
+_core:
+  default_config_hash: jWDkESHnuthS2KIJzOdBCma7qyA2MY9aj_PuYWjrqAE
+id: node.carte.promote
+field_name: promote
+entity_type: node
+bundle: carte
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

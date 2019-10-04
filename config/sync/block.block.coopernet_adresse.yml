@@ -1,0 +1,25 @@
+uuid: 04e3cbb0-e32a-4e81-b330-e7f7e8a70170
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fb5302b0-0e4c-4adb-9be1-3b806980b2dc'
+  module:
+    - block_content
+  theme:
+    - coopernet
+id: coopernet_adresse
+theme: coopernet
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:fb5302b0-0e4c-4adb-9be1-3b806980b2dc'
+settings:
+  id: 'block_content:fb5302b0-0e4c-4adb-9be1-3b806980b2dc'
+  label: Adresse
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

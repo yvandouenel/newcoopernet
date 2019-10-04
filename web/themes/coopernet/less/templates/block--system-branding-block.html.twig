@@ -1,0 +1,33 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+    <div id="logo-and-baseline">
+        {% if site_logo %}
+            <a class="logo navbar-btn" href="{{ path('<front>') }}" rel="home">
+                <img src="{{ site_logo }}" alt="Logo coopernet - retour accueil"/>
+            </a>
+        {% endif %}
+        {% if site_name %}
+            <a class="name navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}"
+               rel="home">{{ site_name }}</a>
+        {% endif %}
+        {% if site_slogan %}
+            <h1 id="baseline"><span class="sr-only">coopernet </span>{{ site_slogan }}</h1>
+        {% endif %}
+    </div>
+{% endblock %}

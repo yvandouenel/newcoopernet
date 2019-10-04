@@ -1,0 +1,22 @@
+uuid: de5358dd-ad0e-48a3-8a08-563bd24b076c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: formations
+label: formations
+type: 'canonical_entities:node'
+pattern: 'formations/[node:title]'
+selection_criteria:
+  d6eaf612-ec8e-4fbc-ae9a-7f7d590633ba:
+    id: node_type
+    bundles:
+      formation: formation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d6eaf612-ec8e-4fbc-ae9a-7f7d590633ba
+selection_logic: and
+weight: -5
+relationships: {  }

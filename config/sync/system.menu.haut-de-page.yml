@@ -1,0 +1,8 @@
+uuid: 5e0a60d1-c1c5-4952-97a1-10dec85ca3c5
+langcode: fr
+status: true
+dependencies: {  }
+id: haut-de-page
+label: 'Haut de page'
+description: ''
+locked: false

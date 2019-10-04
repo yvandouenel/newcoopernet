@@ -1,0 +1,23 @@
+uuid: 1800efcd-5fa9-45a7-a417-235e28f58b65
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencement
+    - node.type.prestation
+  module:
+    - metatag
+id: node.prestation.field_referencement
+field_name: field_referencement
+entity_type: node
+bundle: prestation
+label: Référencement
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

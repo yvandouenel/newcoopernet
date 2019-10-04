@@ -1,0 +1,21 @@
+uuid: 7f12fd52-fe21-481c-8996-b064fb6f72a5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: 3PlUKcZbRdompkzapQXGxCXqwn2Y_S5FkrQMiQkGD74
+id: node.field_training_summary
+field_name: field_training_summary
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

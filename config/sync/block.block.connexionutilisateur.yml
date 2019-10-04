@@ -1,0 +1,26 @@
+uuid: c873c525-52e1-4870-a5cf-5b1ad1af7c36
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - coopernet
+id: connexionutilisateur
+theme: coopernet
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'Connexion utilisateur'
+  provider: user
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /formation/PRF-lot-409
+    negate: false
+    context_mapping: {  }

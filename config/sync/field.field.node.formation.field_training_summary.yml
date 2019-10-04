@@ -1,0 +1,23 @@
+uuid: 276cc7d9-ff50-42ed-b653-20f67ae81601
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_summary
+    - node.type.formation
+  module:
+    - text
+_core:
+  default_config_hash: 2YcyMvN0ldKvb_acZuvE0530VeFXswD7juhoKR0pvTM
+id: node.formation.field_training_summary
+field_name: field_training_summary
+entity_type: node
+bundle: formation
+label: Résumé
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

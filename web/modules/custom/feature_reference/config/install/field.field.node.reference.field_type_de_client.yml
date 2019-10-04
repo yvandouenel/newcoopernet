@@ -1,0 +1,27 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_de_client
+    - node.type.reference
+    - taxonomy.vocabulary.type_de_reference
+id: node.reference.field_type_de_client
+field_name: field_type_de_client
+entity_type: node
+bundle: reference
+label: 'Type de client'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_de_reference: type_de_reference
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

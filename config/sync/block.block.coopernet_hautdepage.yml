@@ -1,0 +1,24 @@
+uuid: c43a8b7f-659e-4478-ba8c-457069c8703e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.haut-de-page
+  module:
+    - system
+  theme:
+    - coopernet
+id: coopernet_hautdepage
+theme: coopernet
+region: topmenu
+weight: -7
+provider: null
+plugin: 'system_menu_block:haut-de-page'
+settings:
+  id: 'system_menu_block:haut-de-page'
+  label: 'Haut de page'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

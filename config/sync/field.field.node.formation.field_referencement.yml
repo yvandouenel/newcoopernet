@@ -1,0 +1,25 @@
+uuid: 9b5f14bc-2a04-404c-a593-2c680a73db4a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencement
+    - node.type.formation
+  module:
+    - metatag
+_core:
+  default_config_hash: 1E7lxvimb97-pYF7qaReEra8Rh_q9FzA9CXyGbqUSfA
+id: node.formation.field_referencement
+field_name: field_referencement
+entity_type: node
+bundle: formation
+label: Référencement
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

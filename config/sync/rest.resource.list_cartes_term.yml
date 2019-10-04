@@ -1,0 +1,18 @@
+uuid: 96f88cda-37b5-4d07-a2aa-b78b99dbcbe9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - memo
+    - serialization
+id: list_cartes_term
+plugin_id: list_cartes_term
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

@@ -1,0 +1,23 @@
+uuid: 5e1f0450-4ce3-4e3a-8071-44c72f85d220
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.home_block
+    - field.storage.block_content.field_titre_lien
+  module:
+    - link
+id: block_content.home_block.field_titre_lien
+field_name: field_titre_lien
+entity_type: block_content
+bundle: home_block
+label: 'Titre lien'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

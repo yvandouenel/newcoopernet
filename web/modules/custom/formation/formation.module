@@ -1,0 +1,9 @@
+ <?php
+ /**
+  * Implements hook_views_pre_render().
+  */
+ function formation_views_pre_render($view) {
+   if($view->id() == "formation") {
+     $view->element['#attached']['library'][] = 'formation/sameheight';
+   }
+ }

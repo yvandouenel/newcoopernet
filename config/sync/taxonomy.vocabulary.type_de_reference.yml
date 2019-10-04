@@ -1,0 +1,9 @@
+uuid: c8261d26-4a0a-4761-bd5a-cc21b01ad35c
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de référence'
+vid: type_de_reference
+description: ''
+hierarchy: 0
+weight: 0

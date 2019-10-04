@@ -1,0 +1,23 @@
+uuid: c63047c9-15fa-43a9-acb8-eb78f8e516e1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_duration
+    - node.type.formation
+  module:
+    - text
+_core:
+  default_config_hash: BwpJPrQyqjp4oc3jyvRrb7iTrsm__ebeZ7vFBX6Qhh4
+id: node.formation.field_training_duration
+field_name: field_training_duration
+entity_type: node
+bundle: formation
+label: Durée
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

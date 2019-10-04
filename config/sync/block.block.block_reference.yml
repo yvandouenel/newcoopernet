@@ -1,0 +1,33 @@
+uuid: 43fef9b2-9e3c-48c1-bd72-bc5e2e395b9e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.references
+  module:
+    - ctools
+    - views
+  theme:
+    - coopernet
+id: block_reference
+theme: coopernet
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:references-block_reference'
+settings:
+  id: 'views_block:references-block_reference'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

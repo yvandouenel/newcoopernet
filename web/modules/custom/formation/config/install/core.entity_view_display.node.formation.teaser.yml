@@ -1,0 +1,38 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.formation.body
+    - field.field.node.formation.field_contact
+    - field.field.node.formation.field_training_duration
+    - field.field.node.formation.field_training_next_session
+    - field.field.node.formation.field_training_place
+    - field.field.node.formation.field_training_price
+    - field.field.node.formation.field_training_summary
+    - node.type.formation
+  module:
+    - text
+    - user
+id: node.formation.teaser
+targetEntityType: node
+bundle: formation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_contact: true
+  field_training_duration: true
+  field_training_next_session: true
+  field_training_place: true
+  field_training_price: true
+  field_training_summary: true
+  langcode: true
+  links: true

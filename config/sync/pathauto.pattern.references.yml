@@ -1,0 +1,22 @@
+uuid: 3be59b25-d95e-4567-b5b9-1f280b9aa396
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: references
+label: References
+type: 'canonical_entities:node'
+pattern: 'references/[node:title]'
+selection_criteria:
+  e2d14e40-5a33-45b2-9689-1a8cb497b197:
+    id: node_type
+    bundles:
+      reference: reference
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e2d14e40-5a33-45b2-9689-1a8cb497b197
+selection_logic: and
+weight: -5
+relationships: {  }

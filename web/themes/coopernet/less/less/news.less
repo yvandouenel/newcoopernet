@@ -1,0 +1,68 @@
+/* Actualités news home ***********************************************************************************************/
+#div-news-home {
+  .link-home-all-news{
+    font-size: 0.8em;
+    display: block;
+    text-align: center;
+    &:before{
+      .glyphicon();
+      content: "\e840";
+      color: @rouge-coopernet;
+    }
+  }
+  background-color: @bleu-clair-coopernet;
+  padding-bottom: 40px;
+  #news-coopernet-home {
+    text-align: center;
+  }
+  .views-row{
+    background-color: white;
+    opacity:0.8;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 0 0 20px 0;
+    min-height: 198px;
+  }
+}
+/* Actualités news views page *****************************************************************************************/
+
+.path-news{
+  .views-row{
+    .views-field {
+      img{
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 25px;
+      }
+      h3.title-view-news {
+        clear: both;
+      }
+    }
+    &:after{
+      display:block;
+      content: '';
+      clear: both;
+      height: 6px;
+      background: url(../images/hr.png) repeat-x 0 0;
+      border: 0;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+}
+/* Actualités news full content ***************************************************************************************/
+.block-type-img-news {
+  position: relative;
+  height: 270px;
+  .field--name-field-news-type{
+    position: absolute;
+    width: 480px;
+    background-color: rgba(255, 255, 255, 0.9);
+    a{
+      font-size: 2em;
+      display: block;
+      text-align: center;
+    }
+  }
+}

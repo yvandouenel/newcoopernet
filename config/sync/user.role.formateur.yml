@@ -1,0 +1,18 @@
+uuid: c18c09f3-ea94-4afe-b23c-9f1201d23a9e
+langcode: fr
+status: true
+dependencies: {  }
+id: formateur
+label: formateur
+weight: -8
+is_admin: null
+permissions:
+  - 'access printer-friendly version'
+  - 'add content to books'
+  - 'administer book outlines'
+  - 'create book content'
+  - 'create new books'
+  - 'delete own book content'
+  - 'edit any book content'
+  - 'edit own book content'
+  - 'view the administration theme'

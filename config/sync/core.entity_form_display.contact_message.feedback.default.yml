@@ -1,0 +1,74 @@
+uuid: 93674a3d-57c0-469e-979b-47d5ae8ed02c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_hide_show:
+      children:
+        - name
+        - subject
+        - message
+        - preview
+        - copy
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: hide-show-contact
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: hide-show
+id: contact_message.feedback.default
+targetEntityType: contact_message
+bundle: feedback
+mode: default
+content:
+  copy:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  mail:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 6
+    settings:
+      rows: 12
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  name:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  preview:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,21 @@
+uuid: 204e42e4-264a-4472-8e7a-8657bc4e28c2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diapositive
+    - node.type.presentation
+  module:
+    - text
+id: node.presentation.field_diapositive
+field_name: field_diapositive
+entity_type: node
+bundle: presentation
+label: Diapositive
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

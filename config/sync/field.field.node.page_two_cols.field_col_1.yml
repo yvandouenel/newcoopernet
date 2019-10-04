@@ -1,0 +1,21 @@
+uuid: 65321cce-2870-47eb-b426-97df0838ff7f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_col_1
+    - node.type.page_two_cols
+  module:
+    - text
+id: node.page_two_cols.field_col_1
+field_name: field_col_1
+entity_type: node
+bundle: page_two_cols
+label: 'Col 1'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

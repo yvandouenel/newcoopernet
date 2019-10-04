@@ -1,0 +1,29 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - system
+    - views
+  theme:
+    - coopernet
+id: views_block__news_block_amo_realisations
+theme: coopernet
+region: col_third
+weight: 0
+provider: null
+plugin: 'views_block:news-block_amo_realisations'
+settings:
+  id: 'views_block:news-block_amo_realisations'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

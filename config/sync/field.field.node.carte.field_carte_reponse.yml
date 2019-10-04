@@ -1,0 +1,23 @@
+uuid: c702ba86-6ef1-4c97-b6f1-f473ba58cfaf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_carte_reponse
+    - node.type.carte
+  module:
+    - text
+_core:
+  default_config_hash: Vekj__S-D-FcBJ_JDLH-ad2lc2jCS9ZodIllY4IwEiM
+id: node.carte.field_carte_reponse
+field_name: field_carte_reponse
+entity_type: node
+bundle: carte
+label: Réponse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

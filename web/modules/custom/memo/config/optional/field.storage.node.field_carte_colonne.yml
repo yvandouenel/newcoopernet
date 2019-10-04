@@ -1,0 +1,20 @@
+uuid: e6224704-b189-4240-8364-dd24dea26c35
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_carte_colonne
+field_name: field_carte_colonne
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

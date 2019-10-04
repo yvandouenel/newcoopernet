@@ -1,0 +1,22 @@
+uuid: 7be67d67-42f4-42b4-83c3-ec755d8ae171
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - coopernet
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: coopernet_messages
+theme: coopernet
+region: header
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

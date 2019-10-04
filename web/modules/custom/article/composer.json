@@ -1,0 +1,7 @@
+{
+  "name": "drupal/article",
+  "description": "Custom article for coopernet",
+  "type": "drupal-module",
+  "homepage": "https://www.coopernet.fr/blog",
+  "license": "GPL-2.0+"
+}

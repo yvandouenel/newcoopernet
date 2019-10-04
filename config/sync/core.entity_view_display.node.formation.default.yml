@@ -1,0 +1,84 @@
+uuid: ed049b6e-93f8-49c2-84b5-e4ec5fa1e7f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.formation.body
+    - field.field.node.formation.field_contact
+    - field.field.node.formation.field_referencement
+    - field.field.node.formation.field_training_duration
+    - field.field.node.formation.field_training_next_session
+    - field.field.node.formation.field_training_place
+    - field.field.node.formation.field_training_price
+    - field.field.node.formation.field_training_summary
+    - node.type.formation
+  module:
+    - metatag
+    - text
+    - user
+_core:
+  default_config_hash: W_l-ZIBdUEdotA4pdoKiEIaQGnvsd_z8DEOVHram0k8
+id: node.formation.default
+targetEntityType: node
+bundle: formation
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_contact:
+    weight: 6
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_referencement:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_training_duration:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_training_next_session:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_training_place:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_training_price:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_training_summary: true
+  langcode: true

@@ -1,0 +1,22 @@
+uuid: d9805233-18ff-4543-ae80-fc9ca8a0eec0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: neRFBkRO7jtRAjA4ff7b2onqfbLcfJcHNx9VNvAPXGg
+id: node.field_carte_thematique
+field_name: field_carte_thematique
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

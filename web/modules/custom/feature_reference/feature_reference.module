@@ -1,0 +1,9 @@
+<?php
+/**
+ * Implements hook_views_pre_render().
+ */
+/*function feature_reference_views_pre_render($view) {
+  if($view->id() == "references") {
+    $view->element['#attached']['library'][] = 'feature_reference/sameheight';
+  }
+}*/

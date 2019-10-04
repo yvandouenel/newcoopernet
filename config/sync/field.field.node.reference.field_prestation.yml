@@ -1,0 +1,30 @@
+uuid: 0734e965-e63a-480c-b27c-5afe1d2265ae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prestation
+    - node.type.reference
+    - taxonomy.vocabulary.prestation_reference
+_core:
+  default_config_hash: esXeKDd4OtP7OBVJUqGTUAueA_RE2RFG9KdZWAiFSsI
+id: node.reference.field_prestation
+field_name: field_prestation
+entity_type: node
+bundle: reference
+label: Prestation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      prestation_reference: prestation_reference
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

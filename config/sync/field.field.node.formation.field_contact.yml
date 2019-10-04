@@ -1,0 +1,28 @@
+uuid: bab560d3-ca07-4a6b-9b2d-ff2a21712a31
+langcode: fr
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.node.field_contact
+    - node.type.formation
+_core:
+  default_config_hash: d538ZKDeuUWhNctC2MIXd3Xx_kK-O20K60joHK7WucY
+id: node.formation.field_contact
+field_name: field_contact
+entity_type: node
+bundle: formation
+label: Contact
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 7033e54e-6c2c-484d-a666-e2c2652585c7
+default_value_callback: ''
+settings:
+  handler: 'default:contact_form'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

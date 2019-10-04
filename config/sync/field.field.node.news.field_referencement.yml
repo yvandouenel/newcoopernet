@@ -1,0 +1,25 @@
+uuid: c6ae6c67-8c77-46f1-823e-9e62913086e0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencement
+    - node.type.news
+  module:
+    - metatag
+_core:
+  default_config_hash: 0Y4JOx-G4cvT12ntqjK7oNKXZNM94WEr_Prs2075lr0
+id: node.news.field_referencement
+field_name: field_referencement
+entity_type: node
+bundle: news
+label: Référencement
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

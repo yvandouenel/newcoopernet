@@ -1,0 +1,11 @@
+name: memo
+description: 'Des cartes à apprendre'
+package: Coopernet
+type: module
+version: 1.0
+core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:path
+  - drupal:text
+

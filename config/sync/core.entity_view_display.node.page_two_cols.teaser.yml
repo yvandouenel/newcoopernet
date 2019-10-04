@@ -1,0 +1,25 @@
+uuid: 42f82460-adc2-4cba-9a39-c906ce108194
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_two_cols.field_col_1
+    - field.field.node.page_two_cols.field_col_2
+    - node.type.page_two_cols
+  module:
+    - user
+id: node.page_two_cols.teaser
+targetEntityType: node
+bundle: page_two_cols
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_col_1: true
+  field_col_2: true
+  langcode: true

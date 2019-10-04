@@ -1,0 +1,22 @@
+uuid: 1d97e3e1-5561-451d-aa3b-d4b31ec756a3
+langcode: fr
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - coopernet
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: coopernet_powered
+theme: coopernet
+region: navigation
+weight: -8
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Propulsé par Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

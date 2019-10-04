@@ -1,0 +1,75 @@
+<?php
+// Programmatically create taxonomy terms for taxonomy module on install.
+// This is the bar.install file included in a module.
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\Yaml\Yaml;
+use Drupal\taxonomy\Entity\Vocabulary;
+/**
+ * Implements hook_install().
+ *
+ * Creates some default vocabularies.
+ *
+ * @see hook_install()
+ *
+ */
+function memo_install() {
+  // Set the weight of the memo.module to 1 so it is loaded after the taxonomy.module.
+  module_set_weight('memo', 1);
+
+  $vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+  if (isset($vocabularies['carte_colonne'])) {
+    // Création des termes
+    $items = [
+      'À apprendre',
+      'Je sais un peu',
+      'Je sais bien',
+      'Je sais parfaitement',
+    ];
+    foreach ($items as $item) {
+      $new_term = \Drupal\taxonomy\Entity\Term::create([
+        'vid' => 'carte_colonne',
+        'name' => $item,
+      ]);
+      $new_term->enforceIsNew();
+      $new_term->save();
+    }
+  }
+  if (isset($vocabularies['carte_thematique'])) {
+    // Création des termes
+    $items = [
+      'Programmation',
+      'Langues',
+      'Départements',
+    ];
+    foreach ($items as $item) {
+      $new_term = \Drupal\taxonomy\Entity\Term::create([
+        'vid' => 'carte_thematique',
+        'name' => $item,
+      ]);
+      $new_term->enforceIsNew();
+      $new_term->save();
+    }
+  }
+}
+/**
+ * Implements hook_uninstall().
+ */
+function memo_uninstall() {
+  $tids = \Drupal::entityQuery('taxonomy_term')
+  ->condition('vid', 'carte_colonne')
+  ->execute();
+
+  $controller = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $entities = $controller->loadMultiple($tids);
+  $controller->delete($entities);
+  vocabulary_delete("carte_colonne");
+  vocabulary_delete("carte_thematique");
+}
+
+function vocabulary_delete($vid) {
+  $vocab = Vocabulary::load($vid);
+  if ($vocab) {
+    $vocab->delete();
+  }
+}

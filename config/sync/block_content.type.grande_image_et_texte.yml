@@ -1,0 +1,8 @@
+uuid: c40ac6de-3a6f-4d40-9b16-cba2924d1937
+langcode: fr
+status: true
+dependencies: {  }
+id: grande_image_et_texte
+label: 'Grande image et texte'
+revision: 0
+description: ''

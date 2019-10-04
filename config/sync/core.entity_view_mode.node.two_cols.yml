@@ -1,0 +1,10 @@
+uuid: a1e21867-dd4c-4efb-8f1b-139536aac80c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.two_cols
+label: 'Two cols'
+targetEntityType: node
+cache: true

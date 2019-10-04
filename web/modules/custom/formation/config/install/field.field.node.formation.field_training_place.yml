@@ -1,0 +1,23 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_place
+    - node.type.formation
+  module:
+    - text
+id: node.formation.field_training_place
+field_name: field_training_place
+entity_type: node
+bundle: formation
+label: Lieu
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<ul>\r\n\t<li><a href=\"/contact\">A Crealead, 55 rue Saint Cléophas - &nbsp;34070&nbsp;Montpellier</a></li>\r\n\t<li>Dans vos locaux (Paris, Lyon, Toulouse ...)</li>\r\n</ul>\r\n"
+    format: full_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

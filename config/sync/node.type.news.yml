@@ -1,0 +1,20 @@
+uuid: c3af5726-4136-40c4-9f3a-bb3c553a3d8e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - haut-de-page
+    parent: 'haut-de-page:'
+_core:
+  default_config_hash: Jm2TMLACQ4NTj0AjXQUPm6tv5LJSR3Y2AC2aJq7o_pU
+name: Actualités
+type: news
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

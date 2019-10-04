@@ -1,0 +1,8 @@
+uuid: f5035cb8-3124-457c-a6b6-ed7b67b9d4e9
+langcode: fr
+status: true
+dependencies: {  }
+id: home_block
+label: 'Bloc accueil'
+revision: 0
+description: ''

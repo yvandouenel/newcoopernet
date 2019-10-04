@@ -1,0 +1,11 @@
+uuid: d39d5615-a702-436a-b7db-8d92ba99db89
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.grande_image_et_texte
+id: block_content.grande_image_et_texte
+target_entity_type_id: block_content
+target_bundle: grande_image_et_texte
+default_langcode: site_default
+language_alterable: false

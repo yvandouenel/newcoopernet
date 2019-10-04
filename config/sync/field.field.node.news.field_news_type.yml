@@ -1,0 +1,30 @@
+uuid: 7e8da6ce-77a8-430e-ac98-4ed3a766c7f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_type
+    - node.type.news
+    - taxonomy.vocabulary.news_type
+_core:
+  default_config_hash: 0NPDZgIYRv9ECNCZqY-bCJRp-fT9DiQQqiiPKyFQ3_g
+id: node.news.field_news_type
+field_name: field_news_type
+entity_type: node
+bundle: news
+label: 'Types d''actualité'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_type: news_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

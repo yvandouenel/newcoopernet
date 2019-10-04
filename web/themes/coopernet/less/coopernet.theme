@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+/*block__system_menu_block__main*/
+function coopernet_preprocess_block__system_menu_block__main(array &$variables) {
+
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function coopernet_preprocess_html(&$variables) {
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['attributes']['class'][] = 'page-node-' . $node->id();
+  }
+}
+
+function coopernet_preprocess_node(&$variables) {
+  switch ($variables['node']->getType()) {
+    case "presentation":
+      $variables['#attached']['library'][] = 'coopernet/coopernet-presentation';
+      break;
+  }
+}

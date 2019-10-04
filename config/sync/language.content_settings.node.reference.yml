@@ -1,0 +1,13 @@
+uuid: 6e9e06b8-ead3-4699-90fe-aa9d9f140771
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.reference
+_core:
+  default_config_hash: By_vuOTAMFu00yVCizDLP2hbNBvw3DvAHzxqS-D1VaE
+id: node.reference
+target_entity_type_id: node
+target_bundle: reference
+default_langcode: site_default
+language_alterable: false

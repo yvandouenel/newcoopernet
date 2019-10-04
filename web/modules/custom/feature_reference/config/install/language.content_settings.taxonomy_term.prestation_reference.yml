@@ -1,0 +1,10 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prestation_reference
+id: taxonomy_term.prestation_reference
+target_entity_type_id: taxonomy_term
+target_bundle: prestation_reference
+default_langcode: site_default
+language_alterable: false

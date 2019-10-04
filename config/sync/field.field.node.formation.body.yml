@@ -1,0 +1,24 @@
+uuid: cf52c906-70c8-45da-80a8-5f9d65cb09a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.formation
+  module:
+    - text
+_core:
+  default_config_hash: eH0BX7ZvR4aA4TYVX8BmWkn8Ep4MzbK7DdtORZ8kORk
+id: node.formation.body
+field_name: body
+entity_type: node
+bundle: formation
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

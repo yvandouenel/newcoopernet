@@ -1,0 +1,38 @@
+cdn_provider: ''
+_core:
+  default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: themes/coopernet/less/favicon.ico
+  url: 'http://local.coopernet.dev/themes/coopernet/less/favicon.ico'
+  use_default: 0
+schemas:
+  bootstrap: 8000
+  coopernet: 8000
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: themes/coopernet/less/images/coopernet.gif
+  url: ''
+  use_default: 0
+region_wells:
+  topmenu: ''
+  header: ''
+  navigation: ''
+  navigation_collapsible: ''
+  help: ''
+  highlighted: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  col_first: ''
+  col_second: ''
+  col_third: ''
+  clients: ''
+  footer: ''
+table_responsive: '-1'
+table: ''
+langcode: fr

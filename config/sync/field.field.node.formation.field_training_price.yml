@@ -1,0 +1,23 @@
+uuid: 13df24dc-3ed5-430c-8edf-edf7387af7a0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_training_price
+    - node.type.formation
+  module:
+    - text
+_core:
+  default_config_hash: eJomNzOodIr6K4TbuIkFkhEPUnSn5iS4KK4Pg040noY
+id: node.formation.field_training_price
+field_name: field_training_price
+entity_type: node
+bundle: formation
+label: Coût
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

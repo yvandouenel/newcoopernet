@@ -1,0 +1,34 @@
+uuid: f0d64854-2b67-4968-ad01-1762335a45f0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.grande_image_et_texte
+    - field.field.block_content.grande_image_et_texte.body
+    - field.field.block_content.grande_image_et_texte.field_image
+  module:
+    - image
+    - text
+id: block_content.grande_image_et_texte.default
+targetEntityType: block_content
+bundle: grande_image_et_texte
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true

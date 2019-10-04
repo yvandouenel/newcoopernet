@@ -1,0 +1,7 @@
+sameheight:
+  version: 1.x
+  js:
+    js/jquery.matchHeight-min.js: {}
+    js/matchFormation.js: {}
+  dependencies:
+    - core/jquery

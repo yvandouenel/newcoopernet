@@ -1,0 +1,13 @@
+uuid: f4f33693-b4e7-4957-8619-ecc20a6e4f13
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: umEhtIKroq2DaH1mPYnmkwYZL73Hxy0gPy7A2kIsjTg
+id: node.article
+target_entity_type_id: node
+target_bundle: article
+default_langcode: site_default
+language_alterable: false

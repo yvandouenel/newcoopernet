@@ -1,0 +1,18 @@
+uuid: c3342346-8937-4e76-a127-19d35f5eca9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - memo
+    - serialization
+id: is_logged
+plugin_id: is_logged
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

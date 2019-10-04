@@ -1,0 +1,37 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.reference.body
+    - field.field.node.reference.field_gallerie_images
+    - field.field.node.reference.field_prestation
+    - field.field.node.reference.field_type_de_client
+    - image.style.large
+    - node.type.reference
+  module:
+    - ds
+    - image
+    - user
+id: node.reference.teaser
+targetEntityType: node
+bundle: reference
+mode: teaser
+content:
+  field_gallerie_images:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: large
+      image_link: content
+    third_party_settings:
+      ds:
+        ds_limit: ''
+hidden:
+  body: true
+  field_prestation: true
+  field_type_de_client: true
+  langcode: true
+  links: true

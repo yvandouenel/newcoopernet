@@ -1,0 +1,9 @@
+uuid: b56e4723-8bb2-4339-9ade-bbc2b7c2ffcd
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Prestation référence'
+vid: prestation_reference
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,11 @@
+uuid: 15e0b41f-efd4-4618-9112-21b77009cb6d
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WLj5W_srRwoMB7kfpNsjFjm1y1sAbGuxuTqhCnq8jp8
+name: 'Colonne carte'
+vid: carte_colonne
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,47 @@
+uuid: dde04ec5-c939-42c0-815b-9e0f9fa4955c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.home_block
+    - field.field.block_content.home_block.body
+    - field.field.block_content.home_block.field_image
+    - field.field.block_content.home_block.field_titre_lien
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+    - text
+id: block_content.home_block.default
+targetEntityType: block_content
+bundle: home_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_titre_lien:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  info: true
+  langcode: true

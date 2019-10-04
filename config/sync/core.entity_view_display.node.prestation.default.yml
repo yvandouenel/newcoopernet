@@ -1,0 +1,73 @@
+uuid: d757b7cf-8de0-4155-9bf2-67b7e4601f0d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.prestation.body
+    - field.field.node.prestation.field_contact
+    - field.field.node.prestation.field_gallerie_images
+    - field.field.node.prestation.field_referencement
+    - node.type.prestation
+  module:
+    - juicebox
+    - metatag
+    - text
+    - user
+id: node.prestation.default
+targetEntityType: node
+bundle: prestation
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_contact:
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_gallerie_images:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      thumb_style: juicebox_square_thumb
+      caption_source: ''
+      title_source: ''
+      jlib_galleryWidth: 100%
+      jlib_galleryHeight: 570px
+      jlib_backgroundColor: '#FFCC66'
+      jlib_textColor: 'rgba(255,255,255,1)'
+      jlib_thumbFrameColor: 'rgba(255,255,255,.5)'
+      jlib_showOpenButton: true
+      jlib_showExpandButton: true
+      jlib_showThumbsButton: true
+      manual_config: ''
+      incompatible_file_action: show_icon_and_link
+      linkurl_source: ''
+      linkurl_target: _blank
+      custom_parent_classes: ''
+      jlib_useFullscreenExpand: '0'
+      jlib_useThumbDots: false
+      apply_markup_filter: true
+    third_party_settings: {  }
+    type: juicebox_formatter
+    region: content
+  field_referencement:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+hidden:
+  langcode: true
+  links: true

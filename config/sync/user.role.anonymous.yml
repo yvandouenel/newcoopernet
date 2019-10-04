@@ -1,0 +1,20 @@
+uuid: 730a6c45-0143-4b1f-8e22-e62505966e4c
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'restful get is_logged'
+  - 'restful get list_cartes_term'
+  - 'restful get theme_terms'
+  - 'restful post user_registration'
+  - 'search content'
+  - 'use text format restricted_html'

@@ -1,0 +1,21 @@
+uuid: 59fcd79b-d980-4bde-b231-59b83959edf2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: DviLKzBeHJNrVHEl-pSXziGeLdTuqzOMMH9OZffr5EA
+id: node.field_training_place
+field_name: field_training_place
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+name: Actualités
+description: 'Provides Actualités type de contenu and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - draggableviews
+  - field
+  - file
+  - image
+  - image_widget_crop
+  - language
+  - menu_ui
+  - metatag
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views

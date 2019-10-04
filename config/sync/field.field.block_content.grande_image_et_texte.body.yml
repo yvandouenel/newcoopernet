@@ -1,0 +1,22 @@
+uuid: d9f2f78d-c4f4-4cbc-87ba-8947dc0b5f8f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.grande_image_et_texte
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.grande_image_et_texte.body
+field_name: body
+entity_type: block_content
+bundle: grande_image_et_texte
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

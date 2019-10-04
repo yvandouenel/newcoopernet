@@ -1,0 +1,23 @@
+uuid: 05ce864f-d0b6-4cc8-b455-a16c3b87b007
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_summary
+    - node.type.news
+  module:
+    - text
+_core:
+  default_config_hash: Jn0QYRysSWuYXLUgA5VQL4UVNWgP9G9pzjwvp-n1R04
+id: node.news.field_news_summary
+field_name: field_news_summary
+entity_type: node
+bundle: news
+label: Résumé
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

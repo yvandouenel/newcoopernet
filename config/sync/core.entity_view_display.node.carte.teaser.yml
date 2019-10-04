@@ -1,0 +1,41 @@
+uuid: b4b0991d-2011-4c4c-a198-a42c9bbd3e34
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.carte.body
+    - field.field.node.carte.field_carte_colonne
+    - field.field.node.carte.field_carte_question
+    - field.field.node.carte.field_carte_reponse
+    - field.field.node.carte.field_carte_thematique
+    - node.type.carte
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: KuH5PVINZ6lf-M7OcG83XGbdbkG51N-MZBmLehDrAMU
+id: node.carte.teaser
+targetEntityType: node
+bundle: carte
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_carte_colonne: true
+  field_carte_question: true
+  field_carte_reponse: true
+  field_carte_thematique: true
+  langcode: true

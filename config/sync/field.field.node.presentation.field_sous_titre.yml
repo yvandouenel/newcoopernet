@@ -1,0 +1,19 @@
+uuid: 37692583-fc76-4068-91c3-4501870519cd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sous_titre
+    - node.type.presentation
+id: node.presentation.field_sous_titre
+field_name: field_sous_titre
+entity_type: node
+bundle: presentation
+label: Sous-titre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

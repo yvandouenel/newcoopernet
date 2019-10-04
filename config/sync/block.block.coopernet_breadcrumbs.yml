@@ -1,0 +1,22 @@
+uuid: a8584b9f-aa9a-4d8f-9cf2-6342d56c3971
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - coopernet
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: coopernet_breadcrumbs
+theme: coopernet
+region: content
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fils d''Ariane'
+  provider: system
+  label_display: '0'
+visibility: {  }

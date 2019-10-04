@@ -1,0 +1,32 @@
+uuid: c5f6b06c-efe0-4976-994d-9f03f5a40f7e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - system
+    - views
+  theme:
+    - coopernet
+_core:
+  default_config_hash: HoJI8j_W4QgR1jV0w5Edr4St5hS19mLF7_vv925wRYI
+id: views_block__news_block_ess
+theme: coopernet
+region: col_second
+weight: 0
+provider: null
+plugin: 'views_block:news-block_ess'
+settings:
+  id: 'views_block:news-block_ess'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

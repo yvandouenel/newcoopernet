@@ -1,0 +1,40 @@
+uuid: 54f52b36-6981-4400-9236-2b122a01c671
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:239e864c-cf1f-4d16-a1f1-7bea9acd23bf'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - coopernet
+id: indexformation
+theme: coopernet
+region: clients
+weight: 0
+provider: null
+plugin: 'block_content:239e864c-cf1f-4d16-a1f1-7bea9acd23bf'
+settings:
+  id: 'block_content:239e864c-cf1f-4d16-a1f1-7bea9acd23bf'
+  label: 'index formations PRF'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/formation/*\r\n/user/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -1,0 +1,20 @@
+uuid: c8e83302-a3f1-46d4-aa91-5358fe6b19ad
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: quxuujwnc0QWJMIf-qcc6lr8n9RhULT5YeyWSCQ7-_Q
+name: Carte
+type: carte
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

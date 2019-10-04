@@ -1,0 +1,20 @@
+uuid: a4a6c1ae-9b6d-4ac8-80fa-75c55987b6ce
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_type_de_prestation
+field_name: field_type_de_prestation
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

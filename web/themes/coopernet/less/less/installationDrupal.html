@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h3> 1.1​&nbsp;Récupérer le code source</h3>
+
+    <pre>composer create-project drupal-composer/drupal-project:8.x-dev violan --stability dev --no-interaction</pre>
+
+    <p>En savoir plus : <a href="https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#download-core-option-a">https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#download-core-option-a</a> </p>
+
+    <h3>​1.2​&nbsp;Versionner le code avec git</h3>
+
+    <p> Créer le dépot sur github</p>
+
+    <pre> git init</pre>
+
+    <pre> git add -A</pre>
+
+    <pre> git ci -m "First commit with drupal 8.5 managed with composer"</pre>
+
+    <pre> git remote add origin https://github.com/yvandouenel/...</pre>
+
+    <pre> git push -u origin master</pre>
+
+
+    <h3> ​1.3​&nbsp;Installer les dépendances avec composer</h3>
+
+    <pre> composer install</pre>
+
+    <h3> ​1.4​&nbsp;Créer la base de données</h3>
+
+    <h3> ​1.5​&nbsp;Finaliser l’installation via l’interface de drupal</h3>
+
+</body>
+</html>

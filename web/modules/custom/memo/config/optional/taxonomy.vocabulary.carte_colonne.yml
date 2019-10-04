@@ -1,0 +1,9 @@
+uuid: 15e0b41f-efd4-4618-9112-21b77009cb6d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Colonne carte'
+vid: carte_colonne
+description: ''
+hierarchy: 0
+weight: 0

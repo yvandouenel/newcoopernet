@@ -1,0 +1,7 @@
+questiontitle:
+  version: 1.x
+  js:
+    js/question_title.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

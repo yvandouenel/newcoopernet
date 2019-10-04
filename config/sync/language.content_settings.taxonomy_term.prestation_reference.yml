@@ -1,0 +1,11 @@
+uuid: 3fbf3171-4a55-4bb5-921f-b05d2d36f741
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.prestation_reference
+id: taxonomy_term.prestation_reference
+target_entity_type_id: taxonomy_term
+target_bundle: prestation_reference
+default_langcode: site_default
+language_alterable: false

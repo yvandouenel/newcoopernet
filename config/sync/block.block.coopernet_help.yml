@@ -1,0 +1,22 @@
+uuid: c45d98e0-47b9-4cde-9a8f-096e004d8878
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - coopernet
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: coopernet_help
+theme: coopernet
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aide
+  provider: help
+  label_display: '0'
+visibility: {  }

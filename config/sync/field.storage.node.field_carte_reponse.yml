@@ -1,0 +1,22 @@
+uuid: 776b7848-d382-4638-a23c-07448c7a5095
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: DTdRdXJe3wp_oodenTz1GXfI_K9oWBd0LNpHTRXvRPY
+id: node.field_carte_reponse
+field_name: field_carte_reponse
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

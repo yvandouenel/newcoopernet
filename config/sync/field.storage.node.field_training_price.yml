@@ -1,0 +1,21 @@
+uuid: c2fdda77-a72a-4106-bb12-fbbb89f1829f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: m28Oii5PiXPhAFq6XOH-nRY_8j5aYubBLJgqocSRIOg
+id: node.field_training_price
+field_name: field_training_price
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

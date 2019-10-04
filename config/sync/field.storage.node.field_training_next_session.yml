@@ -1,0 +1,21 @@
+uuid: 663678eb-dcb7-458b-bbcc-45ef6718aa0c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: hs0q9YUu3T7zQGHlDbngqEQo9dMM7olsdnti2juA6TE
+id: node.field_training_next_session
+field_name: field_training_next_session
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

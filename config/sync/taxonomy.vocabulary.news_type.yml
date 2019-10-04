@@ -1,0 +1,11 @@
+uuid: 6056b4a8-18ed-4008-9e4f-712a8d314900
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GMuMKa3I_ERQRlZDjMq3bk10yQF9lwpBdi7rzaL6s5U
+name: 'Types d''actualités'
+vid: news_type
+description: ''
+hierarchy: 0
+weight: 0

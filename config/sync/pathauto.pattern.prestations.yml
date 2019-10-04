@@ -1,0 +1,22 @@
+uuid: 5949d433-04f4-4278-961d-86deb3375b4f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: prestations
+label: Prestations
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  5199f0d0-a1b5-414b-870c-cfc282bf12e1:
+    id: node_type
+    bundles:
+      prestation: prestation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5199f0d0-a1b5-414b-870c-cfc282bf12e1
+selection_logic: and
+weight: -5
+relationships: {  }

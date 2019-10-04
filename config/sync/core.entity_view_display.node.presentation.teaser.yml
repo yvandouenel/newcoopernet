@@ -1,0 +1,25 @@
+uuid: 0478c9f5-e480-4dee-8e8e-5a95794d7cab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.presentation.field_diapositive
+    - field.field.node.presentation.field_sous_titre
+    - node.type.presentation
+  module:
+    - user
+id: node.presentation.teaser
+targetEntityType: node
+bundle: presentation
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_diapositive: true
+  field_sous_titre: true
+  langcode: true

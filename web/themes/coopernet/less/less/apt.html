@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<h3>1. Installer des applications avec Linux/Ubuntu</h3>
+<h4>1. Développer une application grâce aux autres</h4>
+<p>Qand on développe, on évite de réinventer la roue à chaque fois. Pour se faire nous pouvons faire appel à des roues déjà disponibles. Nous allons donc nous servir du travail des autres pour notre propre projet : ce sont les dépendances.
+Certains développeurs ont donc mis à disposition tout un tas de paquets contenant des choses interessantes :</p>
+<ul>
+  <li>Une librairie pour redimensionner des images.</li>
+  <li>Une base de données sonores.</li>
+  <li>Un utilitaire pour calculer des distances terrestres. (;-)</li>
+  <li>Une librairie de créer des interfaces web</li>
+  <li>Une application complète</li>
+  <li>Etc...</li>
+</ul>
+<p>Tous ces paquets sont maintenus à jour (enfin dans la majorité des cas...) et mis à disposition sur des serveurs appelées : dépôts (deb)</p>
+<h4> Gérer ses paquets avec Ubuntu : la commande apt</h4>
+<p>Par défaut, le système contient déjà une liste de serveurs de dépôts officiels. Ce sont les sources les plus sûrs de paquets.</p>
+<h4>Chercher un paquet dans les dépôts : apt search</h4>
+<p>Par exemple, pour installer l’utilitaire git, nous allons taper :</p>
+<pre>$ apt search git</pre>
+<p>Résultat dans la liste :</p>
+<pre>git/stable,stable 1:2.11.0-3+deb9u4 amd64</pre>
+<p>système de gestion de versions distribué, rapide et évolutif
+  </p>
+<h4>Installer un paquet : apt install</h4>
+<p>Pour installer git, nous allons donc utiliser la commande :</p>
+<pre>$ sudo apt install git
+    Lecture des listes de paquets... Fait
+    Construction de l'arbre des dépendances
+    Lecture des informations d'état... Fait
+    The following additional packages will be installed:
+    git-man liberror-perl
+    Paquets suggérés :
+    git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn
+    Paquets recommandés :
+    patch less
+    Les NOUVEAUX paquets suivants seront installés :
+    git git-man liberror-perl
+    0 mis à jour, 3 nouvellement installés, 0 à enlever et 1 non mis à jour.
+    Il est nécessaire de prendre 5 627 ko dans les archives.
+    Après cette opération, 31,1 Mo d'espace disque supplémentaires seront utilisés.
+    Souhaitez-vous continuer ? [O/n]
+
+    Réception de:1 http://deb.debian.org/debian stretch/main amd64 liberror-perl all 0.17024-1 [26,9 kB]
+    Réception de:2 http://deb.debian.org/debian stretch/main amd64 git-man all 1:2.11.0-3+deb9u4 [1 433 kB]
+    Réception de:3 http://deb.debian.org/debian stretch/main amd64 git amd64 1:2.11.0-3+deb9u4 [4 167 kB]
+    5 627 ko réceptionnés en 0s (11,0 Mo/s)
+    Sélection du paquet liberror-perl précédemment désélectionné.
+    (Lecture de la base de données... 48406 fichiers et répertoires déjà installés.)
+    Préparation du dépaquetage de .../liberror-perl_0.17024-1_all.deb ...
+    Dépaquetage de liberror-perl (0.17024-1) ...
+    Sélection du paquet git-man précédemment désélectionné.
+    Préparation du dépaquetage de .../git-man_1%3a2.11.0-3+deb9u4_all.deb ...
+    Dépaquetage de git-man (1:2.11.0-3+deb9u4) ...
+    Sélection du paquet git précédemment désélectionné.
+    Préparation du dépaquetage de .../git_1%3a2.11.0-3+deb9u4_amd64.deb ...
+    Dépaquetage de git (1:2.11.0-3+deb9u4) ...
+    Paramétrage de git-man (1:2.11.0-3+deb9u4) ...
+    Paramétrage de liberror-perl (0.17024-1) ...
+    Traitement des actions différées (« triggers ») pour man-db (2.7.6.1-2) ...
+    Paramétrage de git (1:2.11.0-3+deb9u4) ...
+
+</pre>
+
+<p>
+  <strong>C’EST FAIT !!!!</strong>
+</p>
+
+<h3>Mettre à jour un paquet : apt update et apt upgrade</h3>
+
+<p>Pour mettre à jour nos paquets, nous allons pouvoir utiliser la commande apt update qui récupère la liste de toutes les mises à jour disponibles pour l’ensemble des paquets installés sur notre système.
+  </p>
+  <pre>$ sudo apt update
+      Réception de:2 http://security.debian.org stretch/updates InRelease [94,3 kB]
+      Réception de:3 http://deb.debian.org/debian stretch-updates InRelease [91,0 kB]
+      Réception de:4 http://repo.mysql.com/apt/debian stretch InRelease [19,2 kB]
+      ...</pre>
+<p>Une fois la liste des mises à jour récupérée, nous pouvons lancer la mise à jour</p>
+<pre>$ sudo apt upgrade
+    Lecture des listes de paquets... Fait
+    Construction de l'arbre des dépendances
+    Lecture des informations d'état... Fait
+    Calcul de la mise à jour... Fait
+    Les paquets suivants seront mis à jour :
+    libopenjp2-7 libssl1.0.2 linux-image-4.9.0-8-amd64 openjdk-8-jre openjdk-8-jre-headless openssh-client openssh-server openssh-sftp-server php-zmq
+    9 mis à jour, 0 nouvellement installés, 0 à enlever et 0 non mis à jour.
+    Il est nécessaire de prendre 69,1 Mo dans les archives.
+    Après cette opération, 68,6 ko d'espace disque supplémentaires seront utilisés.
+    Souhaitez-vous continuer ? [O/n]
+    ...
+  </pre>
+<h3>Supprimer un paquet de son système : apt remove</h3>
+<p>Nous pouvons facilement supprimer un paquet de son système grâce à la commande : $ sudo apt remove nom_du_paquet</p>
+
+<pre>$ sudo apt remove git
+    Lecture des listes de paquets... Fait
+    Construction de l'arbre des dépendances
+    Lecture des informations d'état... Fait
+    Les paquets suivants ont été installés automatiquement et ne sont plus nécessaires :
+    git-man liberror-perl
+    Veuillez utiliser « sudo apt autoremove » pour les supprimer.
+    Les paquets suivants seront ENLEVÉS :
+    git
+    0 mis à jour, 0 nouvellement installés, 1 à enlever et 0 non mis à jour.
+    Après cette opération, 29,5 Mo d'espace disque seront libérés.
+    Souhaitez-vous continuer ? [O/n]
+    ...
+    Suppression de git (1:2.11.0-3+deb9u4) ...</pre>
+<p>
+  <strong>C’EST FAIT !</strong>
+</p>
+<h3>Installer un paquet téléchargé : apt install chemin_vers_le_paquet</h3>
+
+<pre>$ sudo apt install code-insiders_1.33.0-1553235446_amd64.deb</pre>
+
+<h3>Quelques commandes utiles complémentaires.</h3>
+<ul>
+  <li>Connaître la version et les dépendances d’un paquet : <pre>apt show nom_du_paquet</pre> </li>
+  <li>Connaître la liste des paquets qui seront mis à jour : <pre>apt list —upgradable</pre> </li>
+  <li>Connaître la liste des dépôts que l’on utilise : <pre>cat /etc/apt/sources.list</pre></li>
+  <li>Éditer la liste des sources : <pre>sudo apt edit-sources</pre> </li>
+</ul>
+
+
+</body>
+</html>

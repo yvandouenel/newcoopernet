@@ -1,0 +1,31 @@
+uuid: 2474efbf-44e8-4ca8-a0e2-b1260231fad2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_carte_colonne
+    - node.type.carte
+    - taxonomy.vocabulary.carte_colonne
+_core:
+  default_config_hash: UYctrjWzd5MIBJAgGRzK4W0DMwksjULjYT6EtuSULUU
+id: node.carte.field_carte_colonne
+field_name: field_carte_colonne
+entity_type: node
+bundle: carte
+label: Colonne
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      carte_colonne: carte_colonne
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

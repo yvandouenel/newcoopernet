@@ -1,0 +1,20 @@
+uuid: c39cc38b-0089-41cd-b64a-9813c1b51a78
+langcode: fr
+status: true
+dependencies:
+  module:
+    - contact
+    - node
+id: node.field_contact_mail
+field_name: field_contact_mail
+entity_type: node
+type: entity_reference
+settings:
+  target_type: contact_form
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

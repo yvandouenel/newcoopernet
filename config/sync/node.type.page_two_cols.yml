@@ -1,0 +1,18 @@
+uuid: b4ed5013-dbd0-4b7e-9463-14f49ca0e598
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Page 2 colonnes'
+type: page_two_cols
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

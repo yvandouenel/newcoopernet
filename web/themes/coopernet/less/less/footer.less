@@ -1,0 +1,55 @@
+.under-clients{
+  background-color: @gris-coopernet;
+  img{
+    margin-bottom: 30px;
+    &.img-col1-home{
+      margin: 0 42px 30px 0;
+    }
+  }
+  h2{
+    color: @bleu-lien-coopernet;
+    margin-bottom: 30px;
+  }
+}
+.under-footer{
+  @media (min-width: 1600px){
+  }
+  background-color: @gris-fonce-coopernet;
+  .footer.container {
+    border-top: 0;
+    #block-coopernet-footer {
+      ul.menu {
+        display: table;
+        margin: 0 auto;
+        li {
+          float: left;
+          a{
+            color: white;
+            &:hover, &.is-active{
+              color: @gris-fonce-coopernet;
+              background-color: @gris-clair-coopernet;
+            }
+          }
+        }
+      }
+
+    }
+    #block-adresse{
+      display: table;
+      margin: 0 auto;
+      color:@gris-clair-coopernet;
+      a{
+        color: white;
+        &:hover{
+          color: black;
+        }
+      }
+    }
+
+  }
+}
+body.path-frontpage{
+  .footer{
+    margin-top: 0;
+  }
+}

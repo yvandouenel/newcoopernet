@@ -1,0 +1,18 @@
+uuid: e5b2da1b-dcef-4153-882f-06d3e22c9921
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Présentation
+type: presentation
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,42 @@
+global-styling:
+  css:
+    theme:
+      css/style.min.css: {}
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Bree+Serif': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Noticia+Text:400,400i,700,700i': { type: external, minified: true }
+
+bootstrap-scripts:
+  js:
+    bootstrap/js/affix.js: {}
+    bootstrap/js/alert.js: {}
+    bootstrap/js/button.js: {}
+    bootstrap/js/carousel.js: {}
+    bootstrap/js/collapse.js: {}
+    bootstrap/js/dropdown.js: {}
+    bootstrap/js/modal.js: {}
+    bootstrap/js/tooltip.js: {}
+    bootstrap/js/popover.js: {}
+    bootstrap/js/scrollspy.js: {}
+    bootstrap/js/tab.js: {}
+    bootstrap/js/transition.js: {}
+custom-scripts:
+  js:
+    js/hide-show-contact.js: {}
+    js/customdiapoexpert.js: {}
+    js/show-hide.js: {}
+  dependencies:
+      - core/jquery
+
+coopernet-presentation:
+  js:
+    js/reveal/show-hide-menu.js: {}
+    js/reveal/head.min.js: {}
+    js/reveal/reveal.min.js: {}
+  css:
+    theme:
+      css/reveal.min.css: {}
+
+

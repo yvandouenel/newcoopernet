@@ -1,0 +1,29 @@
+uuid: 6a31bc5d-e938-4ac4-9e76-878d6935af51
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access files overview'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'create carte content'
+  - 'delete own carte content'
+  - 'edit any carte content'
+  - 'post comments'
+  - 'restful get is_logged'
+  - 'restful get list_cartes'
+  - 'restful get list_cartes_term'
+  - 'restful get theme_terms'
+  - 'restful post user_registration'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'

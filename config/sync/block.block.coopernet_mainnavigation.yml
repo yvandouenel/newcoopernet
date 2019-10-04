@@ -1,0 +1,24 @@
+uuid: 1523b8c3-3caa-4ac6-b405-2c37e0bdc148
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - coopernet
+id: coopernet_mainnavigation
+theme: coopernet
+region: navigation_collapsible
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

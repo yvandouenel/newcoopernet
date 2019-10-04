@@ -1,0 +1,15 @@
+uuid: 0ee2b03d-0ce6-4aa2-88d9-f6d75d1d509c
+langcode: fr
+status: true
+dependencies: {  }
+name: paysage_medium
+label: 'Paysage medium 480x320'
+effects:
+  cc331e71-f368-446f-9a72-9ce91b3b3810:
+    uuid: cc331e71-f368-446f-9a72-9ce91b3b3810
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 320
+      anchor: center-center

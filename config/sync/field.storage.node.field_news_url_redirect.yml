@@ -1,0 +1,23 @@
+uuid: 270aafa0-3d36-4502-9374-6be5be82dfb4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: tdbB931wuNahCrsh4Wu5nthcG0tTbULdl1x-agwVv-4
+id: node.field_news_url_redirect
+field_name: field_news_url_redirect
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

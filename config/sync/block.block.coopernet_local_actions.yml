@@ -1,0 +1,20 @@
+uuid: db2fb47e-2183-4c72-ab64-b962c559ea48
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - coopernet
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: coopernet_local_actions
+theme: coopernet
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: da5b2996-af62-4876-aebc-38091b39ef58
+langcode: fr
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - field.storage.node.field_contact
+    - node.type.prestation
+id: node.prestation.field_contact
+field_name: field_contact
+entity_type: node
+bundle: prestation
+label: Contact
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 7033e54e-6c2c-484d-a666-e2c2652585c7
+default_value_callback: ''
+settings:
+  handler: 'default:contact_form'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 2d3d1e04-cf9d-4607-ba43-3c2abce03834
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: ck9DBNvmbcYEqYG5mfKzJw-Y7XZhgzu-BR4PKlPk8iM
+id: node.field_training_duration
+field_name: field_training_duration
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

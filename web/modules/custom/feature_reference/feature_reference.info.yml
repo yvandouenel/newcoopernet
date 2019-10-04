@@ -1,0 +1,20 @@
+name: 'Feature Reference'
+type: module
+core: 8.x
+dependencies:
+  - draggableviews
+  - ds
+  - field
+  - image
+  - image_widget_crop
+  - juicebox
+  - language
+  - menu_ui
+  - metatag
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0

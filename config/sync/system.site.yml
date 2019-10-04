@@ -1,0 +1,15 @@
+uuid: 50552ac0-910c-4dd3-be5e-d6873b13f07b
+name: Coopernet
+mail: y.douenel@coopernet.fr
+slogan: 'Réussir son site web et ses applications de la conception à la réalisation'
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

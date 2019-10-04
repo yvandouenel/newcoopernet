@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Positionnement</h3>
+
+<ul>
+	<li>float (css1)</li>
+	<li>clear (css1)
+	<ul>
+		<li>A utiliser pour faire passer des boîtes sous les éléments flottants (float)</li>
+	</ul>
+	</li>
+	<li>display (css1)
+	<ul>
+		<li>Attention, cette propriété est importante pour permettre à un élément en ligne d'occuper tout l'espace de son conteneur : display:block; height : 100%;</li>
+	</ul>
+	</li>
+	<li>position (css2)</li>
+	<li>top, right, bottom, left (css2)</li>
+	<li>z-index (css2)</li>
+	<li>:after{ /*CSS2 */ content: ""; display: block; clear:both; }</li>
+</ul>
+
+<h3>Propriétés de boîte</h3>
+
+<ul>
+	<li>Modèle de boîte
+	<ul>
+		<li><img src="images/box-model.gif" /></li>
+		<li>Attention si les valeurs des propriétés de boîte sont exprimées en %, elles sont relatives à leur conteneur</li>
+	</ul>
+	</li>
+	<li>margin (css1)</li>
+	<li>padding (css1)</li>
+	<li>border (css1)</li>
+	<li><a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp" target="_blank">border-radius (css3)</a>
+	<ul>
+		<li>border-radius:8px 8px 8px 8px;</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>Dimensions</h3>
+
+<ul>
+	<li>width (css1)
+	<ul>
+		<li>S'applique sur tous les éléments block</li>
+		<li>En fonction de son contenant</li>
+	</ul>
+	</li>
+	<li>height (css1)
+	<ul>
+		<li>S'applique sur tous les éléments block</li>
+	</ul>
+	</li>
+	<li>line-height (css1)
+	<ul>
+		<li>Hauteur de ligne des éléments inline</li>
+	</ul>
+	</li>
+	<li>max-width (css2)
+	<ul>
+		<li>En fonction de son contenant</li>
+	</ul>
+	</li>
+	<li>max-height (css2)</li>
+</ul>
+
+<h3>Fonds</h3>
+
+<ul>
+	<li>background-color (css1)</li>
+	<li>background-image (css1)</li>
+	<li>background-repeat (css1)</li>
+	<li>background-position (css1)</li>
+	<li>background (css1)
+	<ul>
+		<li>p{ background:#FFCCCC url(../images/fond.png) no-repeat 50% 100%; } /* le repère de la position vient du selecteur (ici p) et non pas de son conteneur */</li>
+	</ul>
+	</li>
+	<li>repeat-x(css1)</li>
+	<li>repeat-y(css1)</li>
+</ul>
+
+<h3>Liste</h3>
+
+<ul>
+	<li>list-style-type (css1)</li>
+</ul>
+
+<p>Polices et textes</p>
+
+<ul>
+	<li>font-family (css1)</li>
+	<li>font-size (css1)</li>
+	<li>font-style (css1)</li>
+	<li>font-variant (css1)</li>
+	<li>font-weight (css1)</li>
+	<li>font (css1)</li>
+	<li>color (css1)</li>
+	<li>text-align (css1)</li>
+	<li>line-height (css1)</li>
+	<li>letter-spacing (css1)</li>
+	<li>word-spacing (css1)</li>
+	<li>white-space (css1)</li>
+</ul>
+
+<h3>Media Queries (css3)</h3>
+
+<ul>
+	<li>@media screen and (max-width:960px) and (min-width : 450px){ /* css ici */}</li>
+</ul>
+
+</body>
+</html>

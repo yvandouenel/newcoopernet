@@ -1,0 +1,20 @@
+name: Article
+description: 'Provides Article type de contenu and related configuration. Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - ds
+  - field
+  - file
+  - image
+  - language
+  - menu_ui
+  - metatag
+  - node
+  - path
+  - rdf
+  - taxonomy
+  - text
+  - user
+  - views
