@@ -9,7 +9,7 @@ use Drupal\rest\ResourceResponse;
  *   id = "list_cartes",
  *   label = @Translation("Cartes Resource"),
  *   uri_paths = {
- *     "canonical" = "/memo/list_cartes"
+ *     "canonical" = "/memo/list_cartes_next"
  *   }
  * )
  */
