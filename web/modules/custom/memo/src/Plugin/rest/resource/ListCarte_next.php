@@ -13,7 +13,7 @@ use Drupal\rest\ResourceResponse;
  *   }
  * )
  */
-class ListCartes extends ResourceBase {
+class ListCartesNext extends ResourceBase {
   /**
    * Responds to entity GET requests.
    * @return \Drupal\rest\ResourceResponse
