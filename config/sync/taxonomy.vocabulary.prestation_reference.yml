@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Prestation référence'
 vid: prestation_reference
 description: ''
-hierarchy: 0
 weight: 0

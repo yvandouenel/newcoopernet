@@ -53,11 +53,11 @@ class ListCartes extends ResourceBase {
             // Cf https://www.drupal.org/forum/support/module-development-and-code-questions/2016-04-25/entity-getfield-getvalue-returns#comment-12892695
             $question_reponse = array(
               "question" => $node->get('field_carte_question')->getValue()['0']['value'],
-              "reponse" => $node->get('field_carte_reponse')->getValue()['0']['value']
+              "reponse" => $node->get('field_carte_reponse')->getValue()['0']['value'],
+              "explication" => $node->get('field_carte_explication')->getValue()['0']['value']
             );
             if (!empty($question_reponse)) {
               array_push($cartes,$question_reponse);
-              //dpm("Hello");
             }
             if (!array_key_exists("cartes", $cols)) {
               $cols["cartes"] = $cartes;
@@ -70,33 +70,3 @@ class ListCartes extends ResourceBase {
     return new ResourceResponse($response);
   }
 }
-/* $films = [[
-      "name" => "The Shawshank Redemption",
-      "year" => 1994,
-      "duration" => 142,
-    ],
-    [
-      "name" => "The Godfather",
-      "year" => 1972,
-      "duration" => '',
-    ],
-    [
-      "name" => "The Dark Knight",
-      "year" => 2008,
-      "duration" => 175,
-    ],
-    [
-      "name" => "The Godfather: Part II",
-      "year" => 1974,
-      "duration" => '',
-    ],
-    [
-      "name" => "Pulp Fiction",
-      "year" => 1994,
-      "duration" => '',
-    ],
-    [
-      "name" => "The Lord of the Rings: The Return of the King",
-      "year" => 2003,
-      "duration" => '',
-    ],]; */

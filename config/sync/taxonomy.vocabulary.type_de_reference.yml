@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Type de référence'
 vid: type_de_reference
 description: ''
-hierarchy: 0
 weight: 0

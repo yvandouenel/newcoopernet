@@ -20,7 +20,6 @@ description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -157,6 +156,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         type:
           id: type
@@ -167,6 +168,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       sorts:
         weight:
           id: weight
@@ -357,7 +361,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<div style=\"float:right;margin-left:20px;\">\n<img alt=\"Label Certif Région \" data-entity-type=\"file\" data-entity-uuid=\"04cbb2f8-3764-4dc3-928a-ea2457b6e474\" src=\"/sites/default/files/inline-images/CertifRegion.jpg\">\n<a style=\"display:block\" href=\"/formation/label-certif-region\">En savoir plus sur l'engagement qualité de Coopernet</a>\n</div>\n<blockquote>\n<div class=\"block-text-intro\">\n<p style=\"font-size:1.2em;\">Bien connaître son sujet est une condition nécessaire et préalable à l’exercice du métier de <strong>formateur</strong>. Mais ce n’est pas suffisant… il faut également  :</p><ul><li>s’approprier les différentes <strong>méthodes pédagogiques</strong> pour s’adapter aux différents profils cognitifs, </li><li>définir les bons <strong>objectifs</strong> pour répondre aux attentes des apprenants,</li><li>varier les supports : papier, électronique (nous avons des spécialistes de l'<a href=\"http://www.crealead.com/annuaire-entrepreneurs/formagen-digital#bootstrap-fieldgroup-nav-item--prsentation\" target=\"_blank\">installation de moodle</a> dans notre coopérative), quiz ... pour <strong>faciliter l'apprentissage</strong></li><li>... sans oublier d’<strong>évaluer les acquis</strong> pendant et après la formation. </li></ul>\n\n<p style=\"font-size:1.8em;\">Ah oui,  il y a encore autre chose\_: il faut aimer transmettre\_! </p>\n</blockquote>\n<p style=\"font-size:1.2em;\">Dans toutes les formations proposées ci-dessous, coopernet s’efforce de prendre en compte toutes ces considérations de façon humaine, professionnelle et responsable.</p>\n</div>\n\n"
+            value: "<div style=\"float:right;margin-left:20px;\">\r\n<img alt=\"DATADOCK \" src=\"https://www.cpformation.com/wp-content/uploads/sites/7/2018/05/datadock.jpg\">\r\n\r\n</div>\r\n<blockquote>\r\n<div class=\"block-text-intro\">\r\n<p style=\"font-size:1.2em;\">Bien connaître son sujet est une condition nécessaire et préalable à l’exercice du métier de <strong>formateur</strong>. Mais ce n’est pas suffisant… il faut également  :</p><ul><li>s’approprier les différentes <strong>méthodes pédagogiques</strong> pour s’adapter aux différents profils cognitifs, </li><li>définir les bons <strong>objectifs</strong> pour répondre aux attentes des apprenants,</li><li>varier les supports : papier, électronique (nous avons des spécialistes de l'<a href=\"http://www.crealead.com/annuaire-entrepreneurs/formagen-digital#bootstrap-fieldgroup-nav-item--prsentation\" target=\"_blank\">installation de moodle</a> dans notre coopérative), quiz ... pour <strong>faciliter l'apprentissage</strong></li><li>... sans oublier d’<strong>évaluer les acquis</strong> pendant et après la formation. </li></ul>\r\n\r\n<p style=\"font-size:1.8em;\">Ah oui,  il y a encore autre chose\_: il faut aimer transmettre\_! </p>\r\n</blockquote>\r\n<p style=\"font-size:1.2em;\">Dans toutes les formations proposées ci-dessous, coopernet s’efforce de prendre en compte toutes ces considérations de façon humaine, professionnelle et responsable.</p>\r\n</div>\r\n\r\n"
             format: full_html
           plugin_id: text
       title: 'Formations de qualité dans les métiers du web à Montpellier'

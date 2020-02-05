@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.carte.body
     - field.field.node.carte.field_carte_colonne
+    - field.field.node.carte.field_carte_explication
     - field.field.node.carte.field_carte_question
     - field.field.node.carte.field_carte_reponse
     - field.field.node.carte.field_carte_thematique
@@ -35,6 +36,7 @@ content:
     region: content
 hidden:
   field_carte_colonne: true
+  field_carte_explication: true
   field_carte_question: true
   field_carte_reponse: true
   field_carte_thematique: true

@@ -39,6 +39,7 @@ class ListCartesTerm extends ResourceBase {
           "id" => $node->id(),
           "question" => $node->get('field_carte_question')->getValue()['0']['value'],
           "reponse" => $node->get('field_carte_reponse')->getValue()['0']['value'],
+          "explication" => $node->get('field_carte_explication')->getValue()['0']['value'],
           "colonne" => $node->get('field_carte_colonne')->target_id,
         );
         if (!empty($question_reponse)) {
