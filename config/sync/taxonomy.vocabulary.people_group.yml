@@ -1,0 +1,8 @@
+uuid: d355eaeb-e583-46bb-a93d-6180bbb917be
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Groupe de personne'
+vid: people_group
+description: ''
+weight: 0

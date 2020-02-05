@@ -1,0 +1,30 @@
+uuid: cba95199-bb2c-4a4f-8c35-4d88125e4650
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_groupe
+    - taxonomy.vocabulary.people_group
+  module:
+    - user
+id: user.user.field_groupe
+field_name: field_groupe
+entity_type: user
+bundle: user
+label: Groupe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      people_group: people_group
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
