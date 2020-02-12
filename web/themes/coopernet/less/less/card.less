@@ -1,0 +1,53 @@
+/* Teaser */
+.path-cartes {
+  #edit-uid {
+    width: 150px;
+  }
+  .view-content {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .views-row {
+      background-color: #6c757d;
+      border-radius: 8px;
+      color: white;
+
+      margin-bottom: 20px;
+      @media screen and (min-width: @screen-lg) {
+        width: 22% !important;
+      }
+      @media screen and (max-width: @screen-lg) and (min-width: @screen-sm) {
+        width: 48% !important;
+      }
+      @media screen and (max-width: @screen-sm) {
+        width: 98% !important;
+      }
+      article {
+        &.carte {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          a {
+            color: white;
+          }
+          h2 {
+            flex-grow: 0;
+          }
+          div.content {
+            flex-grow: 1;
+            color: #6c757d;
+            transition-delay: 500ms;
+            border: thin dotted white;
+            border-radius: 6px;
+            padding: 5px;
+            &:hover {
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
