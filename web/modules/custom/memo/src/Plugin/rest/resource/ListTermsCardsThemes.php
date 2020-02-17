@@ -3,6 +3,7 @@ namespace Drupal\memo\Plugin\rest\resource;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 /**
  * Provides a Demo Resource
  *
@@ -21,14 +22,26 @@ class ListTermsCardsThemes extends ResourceBase {
    */
   public function get($uid = 0) {
     $response = [];
-    if($uid) {
-      // appel de la méthode pour savoir si l'utilisateur a des cartes
-      $this->userHasCards($uid);
-      $vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
 
-      if (isset($vocabularies['carte_thematique'])) {
-        $vid = 'carte_thematique';
-        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    if($uid) {
+      $vocabulary_name = "carte_thematique";
+      $vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+      // appel de la méthode pour savoir si l'utilisateur a des cartes
+      if($this->userHasCards($uid)){
+        // teste s'il existe une taxonomie du type uid
+        if (isset($vocabularies[$uid])) {
+
+        }
+      } else {
+        // teste si le terme existe déjà
+        $terms = taxonomy_term_load_multiple_by_name($uid);
+        if (empty($terms)) {
+         // création du vocabulaire uid
+          $this->createUserTerm($uid, $vocabulary_name);
+        }
+      }
+      if (isset($vocabularies[$vocabulary_name])) {
+        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vocabulary_name);
         foreach ($terms as $term) {
           array_push($response,array(
             'id' => $term->tid,
@@ -39,6 +52,44 @@ class ListTermsCardsThemes extends ResourceBase {
     }
     return new ResourceResponse($response);
   }
+  /**
+   * Crée les termes qui correspondent à l'id de chaque user
+   * comme fils de "carte thématique" > "users"
+  */
+  private function createUserTerm($uid, $vocabulary_name) {
+
+    // création du terme carte_thematique > users
+    $users_term = taxonomy_term_load_multiple_by_name("users");
+    // cas où le terms "users" n'existe pas
+    if (empty($users_term)) {
+      $users_term = \Drupal\taxonomy\Entity\Term::create([
+        'name' => "users",
+        'vid' => $vocabulary_name,
+      ]);
+      $users_term->save();
+      $users_term_tid = $users_term->id();
+
+      // création du term de l'utilisateur dans carte_thematique > users > uid
+      $user_term = Term::create(array(
+        'parent' => array(),
+        'name' => $uid,
+        'vid' => $vocabulary_name,
+      ));
+      $user_term->parent = $users_term_tid;
+      $user_term->save();
+    } else { // cas où le term "users existe déjà"
+      foreach($users_term as $key => $value) {
+        $user_term = Term::create(array(
+            'parent' => array(),
+            'name' => $uid,
+            'vid' => $vocabulary_name,
+          ));
+        $user_term->parent = $key;
+        $user_term->save();
+        break;
+      }
+    }
+  }
 
   private function userHasCards($uid) {
     $query = \Drupal::entityQuery('node');
@@ -47,8 +98,9 @@ class ListTermsCardsThemes extends ResourceBase {
     $query->condition('uid', $uid);
     $cartes = $query->execute();
     $nb_resultats = $query->count()->execute();
-    if($nb_resultats) {
-      $node = Node::create([
+    if($nb_resultats) return true;
+    else return false;
+      /*$node = Node::create([
         'type'        => 'article',
         'title'       => 'Oui, il y a des résultats',
       ]);
@@ -59,8 +111,8 @@ class ListTermsCardsThemes extends ResourceBase {
         'title'       => 'Non, pas de résultat',
       ]);
       $node->save();
-    }
-    /* dpm($nb_resultats);
+
+     dpm($nb_resultats);
     dpm($cartes); */
 
   }
