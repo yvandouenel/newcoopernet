@@ -41,7 +41,14 @@ class ListTermsCardsThemes extends ResourceBase {
         }
       }
       if (isset($vocabularies[$vocabulary_name])) {
-        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vocabulary_name);
+        $user_tid = $this->getTidByName($uid);
+        //$terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vocabulary_name);
+        $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree(
+          $vocabulary_name, // This is your taxonomy term vocabulary (machine name).
+          $user_tid,        // This is "tid" of parent. Set "0" to get all.
+          1,                 // Get only 1st level.
+          FALSE               // Get full load of taxonomy term entity.
+        );
         foreach ($terms as $term) {
           array_push($response,array(
             'id' => $term->tid,
@@ -51,6 +58,22 @@ class ListTermsCardsThemes extends ResourceBase {
       }
     }
     return new ResourceResponse($response);
+  }
+  /**
+   * Récupère le tid qui correspond à l'uid
+  */
+  function getTidByName($name = NULL, $vid = NULL) {
+    $properties = [];
+    if (!empty($name)) {
+      $properties['name'] = $name;
+    }
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
   }
   /**
    * Crée les termes qui correspondent à l'id de chaque user
