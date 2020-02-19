@@ -7,7 +7,7 @@ use Drupal\rest\ResourceResponse;
  *
  * @RestResource(
  *   id = "list_cartes_term",
- *   label = @Translation("Cartes for a term"),
+ *   label = @Translation("Cartes - of a term"),
  *   uri_paths = {
  *     "canonical" = "/memo/list_cartes_term/{uid}/{tid}"
  *   }

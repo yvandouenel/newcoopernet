@@ -7,7 +7,7 @@ use Drupal\rest\ResourceResponse;
  *
  * @RestResource(
  *   id = "is_logged",
- *   label = @Translation("Cartes il Logged"),
+ *   label = @Translation("Cartes - is Logged"),
  *   uri_paths = {
  *     "canonical" = "/memo/is_logged"
  *   }

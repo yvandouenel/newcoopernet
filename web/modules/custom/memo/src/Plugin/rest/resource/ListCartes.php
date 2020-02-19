@@ -7,7 +7,7 @@ use Drupal\rest\ResourceResponse;
  *
  * @RestResource(
  *   id = "list_cartes",
- *   label = @Translation("Cartes Resource"),
+ *   label = @Translation("Cartes - get all cards (no more used ?)"),
  *   uri_paths = {
  *     "canonical" = "/memo/list_cartes"
  *   }

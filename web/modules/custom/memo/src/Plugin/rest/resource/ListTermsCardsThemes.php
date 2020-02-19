@@ -9,7 +9,7 @@ use Drupal\taxonomy\Entity\Term;
  *
  * @RestResource(
  *   id = "theme_terms",
- *   label = @Translation("Cartes themes"),
+ *   label = @Translation("Cartes - get themes"),
  *   uri_paths = {
  *     "canonical" = "/memo/themes/{uid}"
  *   }
@@ -57,7 +57,7 @@ class ListTermsCardsThemes extends ResourceBase {
         }
       }
     }
-    return new ResourceResponse($response);
+    return (new ResourceResponse($response))->addCacheableDependency($terms);
   }
   /**
    * Récupère le tid qui correspond à l'uid
@@ -123,21 +123,6 @@ class ListTermsCardsThemes extends ResourceBase {
     $nb_resultats = $query->count()->execute();
     if($nb_resultats) return true;
     else return false;
-      /*$node = Node::create([
-        'type'        => 'article',
-        'title'       => 'Oui, il y a des résultats',
-      ]);
-      $node->save();
-    } else {
-      $node = Node::create([
-        'type'        => 'article',
-        'title'       => 'Non, pas de résultat',
-      ]);
-      $node->save();
-
-     dpm($nb_resultats);
-    dpm($cartes); */
-
   }
   private function userHasOwnTerms() {
 
