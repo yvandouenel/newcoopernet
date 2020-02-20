@@ -33,7 +33,10 @@ class EditTerm extends ResourceBase {
     if($tid) {
       // cas de la modification d'un terme
       \Drupal::logger('memo')->notice("modification d'un terme");
+      $this->updateTerm($tid, $term_label);
 
+      // Modification de la réponse
+      $response = array("updatedtid" => $tid);
     }
     else if($term_label) {
       // cas de l'ajout d'un terme
@@ -50,7 +53,13 @@ class EditTerm extends ResourceBase {
     $response = new ResourceResponse($response);
     return $response;
   }
-
+  private function updateTerm($tid, $new_name) {
+    // chargement du term concerné
+    $term = Term::load($tid);
+    // Modification du term
+    $term->setName($new_name);
+    $term->save();
+  }
   private function addTerm($term_label) {
     $vocabulary_name = "carte_thematique";
     // Récupération de l'id de l'utilisateur
