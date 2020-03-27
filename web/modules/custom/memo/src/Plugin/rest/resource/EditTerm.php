@@ -28,12 +28,13 @@ class EditTerm extends ResourceBase {
     //$type = serialize($data["label"]);
     $term_label = $data["label"][0]["value"];
     $tid = $data["tid"][0]["value"];
+    $ptid = $data["ptid"][0]["value"];
 
     $response = array("cle" => $term_label);
     if($tid) {
       // cas de la modification d'un terme
       \Drupal::logger('memo')->notice("modification d'un terme");
-      $this->updateTerm($tid, $term_label);
+      $this->updateTerm($tid, $term_label,$ptid);
 
       // Modification de la réponse
       $response = array("updatedtid" => $tid);
@@ -48,16 +49,19 @@ class EditTerm extends ResourceBase {
     else {
       // cas où l'internaute n'est pas identifé
       \Drupal::logger('memo')->error("Problème dans l'ajout ou la modification d'un term");
-
+      $response = array("error" => "Identification problem");
     }
     $response = new ResourceResponse($response);
     return $response;
   }
-  private function updateTerm($tid, $new_name) {
+  private function updateTerm($tid, $new_name, $ptid) {
     // chargement du term concerné
     $term = Term::load($tid);
     // Modification du term
     $term->setName($new_name);
+    if($ptid) {
+      $term->parent = ['target_id' => $ptid];
+    }
     $term->save();
   }
   private function addTerm($term_label) {
