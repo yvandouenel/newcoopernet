@@ -1,0 +1,340 @@
+// Tests du 5 avril 2020 -
+// ATTENTION, j'ai été obligé de mettre à zéro le pid des
+// termes qui sont de profondeur zéro pour que le script fonctionne
+// cf https://glenneggleton.com/page/menu-building-expanding-flat-data-into-a-tree
+
+function getTidByName($name = NULL, $vid = NULL) {
+    $properties = [];
+    if (!empty($name)) {
+      $properties['name'] = $name;
+    }
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
+  }
+$vocabulary_name = "carte_thematique";
+$uid = 1;
+$vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+$user_tid = getTidByName($uid);
+dpm($user_tid);
+$terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree(
+          $vocabulary_name, // This is your taxonomy term vocabulary (machine name).
+          $user_tid,        // This is "tid" of parent. Set "0" to get all.
+          null,                 // Get all levels
+          FALSE               // Get full load of taxonomy term entity.
+        );
+$flat = [];
+
+foreach ($terms as $term) {
+  $tid = ($term->depth) ? $term->parents[0] : 0;
+  array_push(
+    $flat, array(
+    'id' => $term->tid,
+    'pid' => $tid,
+    'name' => $term->name,
+    )
+  );
+}
+dpm($flat);
+function buildTree($flatStructure, $pidKey, $idKey = null)
+{
+    $parents = array();
+    foreach ($flatStructure as $item){
+        $parents[$item[$pidKey]][] = $item;
+    }
+    $fnBuilder = function ($items, $parents, $idKey) use (&$fnBuilder) {
+        foreach ($items as $position => $item) {
+            $id = $item[$idKey];
+            if(isset($parents[$id])) { //is the parent set
+                $item['children'] = $fnBuilder($parents[$id], $parents, $idKey); //add children
+            }
+            //reset the value as children have changed
+            $items[$position] = $item;
+        }
+        //return the item
+        return $items;
+    };
+    return $fnBuilder($parents[0], $parents, $idKey);
+}
+$tree = buildTree($flat, 'pid', 'id');
+dpm($tree);
+
+
+
+// Fin test 5 avril 2020 **********************************************************************************
+
+//test du 2 avril 2020 cf en particulier buildTree pour reconstruire un arbre ***************************************************************************/
+function getTidByName($name = NULL, $vid = NULL) {
+    $properties = [];
+    if (!empty($name)) {
+      $properties['name'] = $name;
+    }
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
+  }
+
+/* ****************************************************************/
+function buildTree(&$tree, $term, $vocabulary) {// passage par référence de $tree qui sera donc impacté
+    // on ne traite dans un premier temps que les termes de premier niveau
+    if ($term->depth != 0) {
+      return;
+    }
+    dpm($term->depth);
+    dpm($term->name);
+    $tree[$term->tid] = $term;
+    $tree[$term->tid]->children = [];
+    $object_children = &$tree[$term->tid]->children;
+
+    $children = \Drupal::entityTypeManager()->entityTypeManager->getStorage('taxonomy_term')->loadChildren($term->tid);
+    if (!$children) {
+      return;
+    }
+    // enfants
+    dpm("enfant : ");
+    dpm($children);
+/*
+
+    $child_tree_objects = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($vocabulary, $term->tid);
+
+    foreach ($children as $child) {
+      foreach ($child_tree_objects as $child_tree_object) {
+        if ($child_tree_object->tid == $child->id()) {
+         $this->buildTree($object_children, $child_tree_object, $vocabulary);
+        }
+    }*/
+}
+
+/* ****************************************************************/
+
+$vocabulary_name = "carte_thematique";
+$uid = 1;
+$vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+$user_tid = getTidByName($uid);
+dpm($user_tid);
+$terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree(
+          $vocabulary_name, // This is your taxonomy term vocabulary (machine name).
+          $user_tid,        // This is "tid" of parent. Set "0" to get all.
+          null,                 // Get all levels
+          FALSE               // Get full load of taxonomy term entity.
+        );
+//dpm($terms);
+$tree = [];
+//dpm($tree);
+foreach ($terms as $term) {
+  //dpm($term);
+ buildTree($tree, $term, $vocabulary_name);
+}
+//dpm($tree);
+
+
+/* ****************************************************************************************/
+
+
+
+// cf https://www.webomelette.com/loading-taxonomy-terms-tree-drupal-8
+namespace Drupal\taxonomy_tree;
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityTypeManager;
+
+/**
+ * Loads taxonomy terms in a tree
+ */
+class TaxonomyTermTree
+{
+
+    /**
+     * @var EntityTypeManager
+     */
+    protected $entityTypeManager;
+
+    /**
+     * TaxonomyTermTree constructor.
+     *
+     * @param EntityTypeManager $entityTypeManager
+     */
+    public function __construct(EntityTypeManager $entityTypeManager)
+    {
+        $this->entityTypeManager = $entityTypeManager;
+    }
+
+    /**
+     * Loads the tree of a vocabulary.
+     *
+     * @param $vocabulary
+     * @return array
+     * @throws InvalidPluginDefinitionException
+     * @throws PluginNotFoundException
+     */
+    public function load($vocabulary): array
+    {
+        $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($vocabulary);
+        $tree = [];
+        foreach ($terms as $tree_object) {
+            $this->buildTree($tree, $tree_object, $vocabulary);
+        }
+
+        return $tree;
+    }
+
+    /**
+     * Populates a tree array given a taxonomy term tree object.
+     *
+     * @param $tree
+     * @param $object
+     * @param $vocabulary
+     * @throws InvalidPluginDefinitionException
+     * @throws PluginNotFoundException
+     */
+    protected function buildTree(&$tree, $object, $vocabulary): void
+    {
+        if ($object->depth != 0) {
+            return;
+        }
+        $key = 'tid_' . $object->tid;
+
+        $tree[$key] = $object;
+        $tree[$key]->children = [];
+        $object_children = &$tree[$key]->children;
+
+        $children = $this->entityTypeManager->getStorage('taxonomy_term')->loadChildren($object->tid);
+        if (!$children) {
+            return;
+        }
+
+        $child_tree_objects = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($vocabulary, $object->tid);
+
+        foreach ($children as $child) {
+            foreach ($child_tree_objects as $child_tree_object) {
+                if ($child_tree_object->tid == $child->id()) {
+                    $this->buildTree($object_children, $child_tree_object, $vocabulary);
+                }
+            }
+        }
+
+        uasort($tree, function ($a, $b) {
+            return $a->weight <=> $b->weight;
+        });
+        uasort($object_children, function ($a, $b) {
+            return $a->weight <=> $b->weight;
+        });
+    }
+}
+
+/********************* CLASSS *****************************/
+$tt = \Drupal::service('taxonomy_tree.taxonomy_term_tree');
+$tree = $tt->load('carte_colonne');
+dpm($tree);
+
+function buildTree($flatStructure, $pidKey, $idKey = null)
+{
+    $parents = array();
+    foreach ($flatStructure as $item){
+        $parents[$item[$pidKey]][] = $item;
+    }
+    $fnBuilder = function($items, $parents, $idKey) use (&$fnBuilder) {
+        foreach ($items as $position => $item) {
+            $id = $item[$idKey];
+            if(isset($parents[$id])) { //is the parent set
+                $item['children'] = $fnBuilder($parents[$id], $parents, $idKey); //add children
+            }
+            //reset the value as children have changed
+            $items[$position] = $item;
+        }
+        //return the item
+        return $items;
+    };
+    return $fnBuilder($parents[0], $parents, $idKey);
+}
+
+
+// test du samedi 4 avril *******************************************************************************
+cf https://glenneggleton.com/page/menu-building-expanding-flat-data-into-a-tree
+function getTidByName($name = NULL, $vid = NULL) {
+    $properties = [];
+    if (!empty($name)) {
+      $properties['name'] = $name;
+    }
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
+  }
+
+function buildTree($flatStructure, $pidKey, $idKey = null)
+{ dpm("buildTree");
+    $parents = array();
+
+    foreach ($flatStructure as $item){
+
+        $parents[$item[$pidKey]][] = $item;
+    }
+
+    $fnBuilder = function($items, $parents, $idKey) use (&$fnBuilder) {
+
+        foreach ($items as $position => $item) {
+
+            $id = $item[$idKey];
+
+            if(isset($parents[$id])) { //is the parent set
+                $item['children'] = $fnBuilder($parents[$id], $parents, $idKey); //add children
+            }
+
+            //reset the value as children have changed
+            $items[$position] = $item;
+        }
+
+        //return the item
+dpm($items);
+        return $items;
+    };
+
+    return $fnBuilder($parents[0], $parents, $idKey);
+}
+function getTree($terms)
+{
+  $rsp = [];
+  $max_depth = 0;
+  foreach ($terms as $term) {
+                    array_push(
+                        $rsp, array(
+                        'id' => $term->tid,
+                        'name' => $term->name,
+                        'pid' => $term->parents[0]
+                        )
+                    );
+        }
+ //dpm($rsp);
+ $tree = buildTree($rsp, 'pid', 'id');
+ dpm($tree);
+ //print_r($tree);
+ //return $rsp;
+}
+
+$response = [];
+$vocabulary_name = "carte_thematique";
+$uid = 1;
+$vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+$user_tid = getTidByName($uid);
+dpm($user_tid);
+$terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree(
+          $vocabulary_name, // This is your taxonomy term vocabulary (machine name).
+          $user_tid,        // This is "tid" of parent. Set "0" to get all.
+          null,                 // Get all levels
+          FALSE               // Get full load of taxonomy term entity.
+        );
+//dpm($terms);
+$response = getTree($terms);
+//dpm($response);
