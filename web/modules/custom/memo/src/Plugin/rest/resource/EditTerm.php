@@ -34,7 +34,15 @@ class EditTerm extends ResourceBase {
     if($tid) {
       // cas de la modification d'un terme
       \Drupal::logger('memo')->notice("modification d'un terme");
-      $this->updateTerm($tid, $term_label,$ptid);
+      // Cas où le terme est déplacé à la racine
+      // De manière arbitraire, -1 correspond à la racine
+      if($ptid == -1) {
+        $uid = \Drupal::currentUser()->id();
+        // Récupération du tid parent (qui correspond à l'uid)
+        $ptid = $this->getTidByName($uid);
+      }
+      \Drupal::logger('memo')->notice("déplacement du terme vers" . $ptid);
+      $this->updateTerm($tid, $term_label, $ptid);
 
       // Modification de la réponse
       $response = array("updatedtid" => $tid);
