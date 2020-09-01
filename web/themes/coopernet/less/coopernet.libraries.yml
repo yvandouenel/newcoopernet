@@ -29,7 +29,11 @@ custom-scripts:
     js/show-hide.js: {}
   dependencies:
       - core/jquery
-
+book:
+  js:
+    js/book-tree.js: {}
+  dependencies:
+    - core/jquery
 coopernet-presentation:
   js:
     js/reveal/show-hide-menu.js: {}
