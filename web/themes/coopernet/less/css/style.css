@@ -8797,13 +8797,16 @@ div.content > .field--name-body ol li:before {
   color: #000;
   font-size: 1.2em;
 }
-.block-book-navigation nav li {
+.block-book-navigation nav ul {
+  padding-left: 0;
+}
+.block-book-navigation nav ul li {
   display: none;
 }
-.block-book-navigation nav li.expanded {
+.block-book-navigation nav ul li.expanded {
   display: block;
 }
-.block-book-navigation nav li.expanded li {
+.block-book-navigation nav ul li.expanded li {
   display: block;
 }
 /* Actualités news home ***********************************************************************************************/
