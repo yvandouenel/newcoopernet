@@ -8809,9 +8809,6 @@ div.content > .field--name-body ol li:before {
 .block-book-navigation nav ul li.expanded li {
   display: block;
 }
-.navigation-book {
-  border: 1px solid red;
-}
 .navigation-book ul {
   list-style: none;
   display: flex;
