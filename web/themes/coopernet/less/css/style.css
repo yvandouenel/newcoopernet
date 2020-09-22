@@ -8812,7 +8812,9 @@ div.content > .field--name-body ol li:before {
 .navigation-book ul {
   list-style: none;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
+  padding: 0;
 }
 .navigation-book ul li a b {
   font-size: 3em;
