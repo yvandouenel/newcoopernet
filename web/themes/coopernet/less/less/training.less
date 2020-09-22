@@ -4,17 +4,20 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
 .path-formation {
   .views-row {
     background-color: rgba(0, 0, 255, 0.1);
     padding: 10px;
     border-radius: 6px;
     margin: 0 0 20px;
+
     h3.title_training {
       a {
         color: @rouge-coopernet;
       }
     }
+
     .views-field-field-training-summary {
       h3 {
         color: @rouge-coopernet;
@@ -25,15 +28,19 @@
 
   }
 }
+
 .block-book-navigation {
   nav {
     ul {
       padding-left: 0;
+
       li {
         display: none;
+
         &.expanded {
           display: block;
-          li{
+
+          li {
             display: block;
           }
         }
@@ -41,6 +48,7 @@
     }
   }
 }
+
 .navigation-book {
   ul {
     list-style: none;
@@ -48,6 +56,7 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 0;
+
     li {
       a {
         b {
@@ -56,11 +65,65 @@
           top: 6px;
           color: #EC5D6F;
         }
+
         &:hover {
           text-decoration: none;
         }
       }
     }
-    
+
+  }
+}
+
+#block-navigationdulivre {
+  nav>ul>li>a {
+    font-size: 2em;
+
+    &:before {
+      position: relative;
+      top: 1px;
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 10px;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e854";
+      font-size: 1em;
+      color: black;
+    }
+  }
+}
+
+.navigation-book-top {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: -10px;
+    left: 48%;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    color: #EC5D6F;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 10px;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e80B";
+    font-size: 1em;
   }
 }

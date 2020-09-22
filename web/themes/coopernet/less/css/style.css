@@ -8825,6 +8825,53 @@ div.content > .field--name-body ol li:before {
 .navigation-book ul li a:hover {
   text-decoration: none;
 }
+#block-navigationdulivre nav > ul > li > a {
+  font-size: 2em;
+}
+#block-navigationdulivre nav > ul > li > a:before {
+  position: relative;
+  top: 1px;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 10px;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e854";
+  font-size: 1em;
+  color: black;
+}
+.navigation-book-top {
+  position: relative;
+}
+.navigation-book-top:after {
+  position: absolute;
+  top: -10px;
+  left: 48%;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  color: #EC5D6F;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 10px;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e80B";
+  font-size: 1em;
+}
 /* Actualités news home ***********************************************************************************************/
 #div-news-home {
   background-color: #70CCD9;
