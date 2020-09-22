@@ -8809,6 +8809,20 @@ div.content > .field--name-body ol li:before {
 .block-book-navigation nav ul li.expanded li {
   display: block;
 }
+.navigation-book ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation-book ul li a b {
+  font-size: 3em;
+  position: relative;
+  top: 6px;
+  color: #EC5D6F;
+}
+.navigation-book ul li a:hover {
+  text-decoration: none;
+}
 /* Actualités news home ***********************************************************************************************/
 #div-news-home {
   background-color: #70CCD9;
