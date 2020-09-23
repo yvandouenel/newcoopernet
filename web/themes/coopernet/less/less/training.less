@@ -53,11 +53,19 @@
   ul {
     list-style: none;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0;
-
+    
+    margin: 20px 0 0 0;
     li {
+      &:nth-child(2){
+        text-align: center;
+      }
+      &:nth-child(3){
+        text-align: right;
+      }
+      margin: 0;
+      flex-basis: 33.33%;
       a {
         b {
           font-size: 3em;
@@ -85,7 +93,7 @@
       font-family: "fontello";
       font-style: normal;
       font-weight: normal;
-      
+
       display: inline-block;
       text-decoration: inherit;
       width: 1em;
@@ -105,6 +113,7 @@
 
 .navigation-book-top {
   position: relative;
+
   &:after {
     position: absolute;
     top: -10px;
@@ -113,6 +122,33 @@
     font-style: normal;
     font-weight: normal;
     color: #EC5D6F;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 10px;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e80B";
+    font-size: 1em;
+  }
+}
+#go-top {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  a:after {
+
+    position: absolute;
+    top: -10px;
+    left: 49.8%;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    color: #ACCE27;
     display: inline-block;
     text-decoration: inherit;
     width: 1em;
