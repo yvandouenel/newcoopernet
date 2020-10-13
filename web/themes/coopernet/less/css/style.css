@@ -8291,6 +8291,7 @@ h3.home_slide_title a p {
   .menu-alone nav ul.menu li a {
     margin-right: 5px;
     font-size: 1.4em;
+    white-space: nowrap;
   }
 }
 .menu-alone nav ul.menu li a.is-active {
