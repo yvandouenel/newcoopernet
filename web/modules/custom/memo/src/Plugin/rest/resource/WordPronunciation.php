@@ -27,7 +27,7 @@ class WordPronunciation extends ResourceBase {
     $url = "http://voicecup.com/api?" .
       "q=" . $word . "&" .
       "key=" . $key .
-      "&l=en&from=10&size=15&length_min=15&length_max=50&duration_min=5&duration_max=25&format=jsonp";
+      "&l=en&from=1&size=15&length_min=5&length_max=50&duration_min=1&duration_max=25&format=jsonp";
     $data = file_get_contents($url);
     
     return new ResourceResponse($data);
