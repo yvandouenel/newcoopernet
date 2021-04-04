@@ -8929,6 +8929,9 @@ div.content > .field--name-body ol li:before {
   font-size: 1em;
 }
 /* zone de droite pour inciter à l'inscription */
+.page-node-131 h2.block-title {
+  margin-top: 120px;
+}
 @media (min-width: 768px) {
   .page-node-131 .col-sm-9 {
     width: 58.33333333% !important;
