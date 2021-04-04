@@ -8850,7 +8850,7 @@ div.content > .field--name-body ol li:before {
   font-size: 3em;
   position: relative;
   top: 6px;
-  color: #EC5D6F;
+  color: #ec5d6f;
 }
 .navigation-book ul li a:hover {
   text-decoration: none;
@@ -8888,7 +8888,7 @@ div.content > .field--name-body ol li:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  color: #EC5D6F;
+  color: #ec5d6f;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -8914,7 +8914,7 @@ div.content > .field--name-body ol li:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  color: #ACCE27;
+  color: #acce27;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -8927,6 +8927,15 @@ div.content > .field--name-body ol li:before {
   -moz-osx-font-smoothing: grayscale;
   content: "\e80B";
   font-size: 1em;
+}
+/* zone de droite pour inciter à l'inscription */
+@media (min-width: 768px) {
+  .page-node-131 .col-sm-9 {
+    width: 58.33333333% !important;
+  }
+  .page-node-131 .col-sm-3 {
+    width: 41.66666667% !important;
+  }
 }
 /* Actualités news home ***********************************************************************************************/
 #div-news-home {
