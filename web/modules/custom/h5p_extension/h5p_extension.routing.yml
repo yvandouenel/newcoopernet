@@ -1,0 +1,17 @@
+h5p_extension.h5p_extension: #route name definition
+  path: "/node/h5p_extension"
+  defaults:
+    _controller: 'Drupal\h5p_extension\Controller\H5p_extensionController::routecontroller' #use the controller namespace :: the method to use
+    _title: "Page du module h5p extension" #page title
+  requirements:
+    _permission: "access content"
+
+h5p_extension.h5p_extension_tab:
+  path: "/node/h5p_extension/tab"
+  requirements:
+    _permission: "access content"
+
+h5p_extension.h5p_extension_resultbygroup:
+  path: "/node/{node}/resultsbygroup"
+  requirements:
+    _permission: "access content" # change for admin ?

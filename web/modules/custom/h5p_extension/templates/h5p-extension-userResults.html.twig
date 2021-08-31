@@ -1,0 +1,48 @@
+{{ attach_library('h5p_extension/h5p-extension-lib') }} {# to atache the library h5p-extension-lib for custom css and js#}
+
+<h1 class="title-container">
+  {{ username |upper }} -
+  <form action="" method="post">
+    <input onclick="userStorage()" type="submit" name="" value="User">
+    <input type="submit" name="usergroup" value="{{ usergroup }}"/>
+  </form>
+</h1>
+<table>
+  <thead>
+    <tr>
+      <th> Quiz </th>
+      <th> Points </th>
+      <th> Max Points </th>
+      <th> Moyenne </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% set userAverage = 0 %}
+    {% set countQuizAverage = 0 %}
+    {% set quizAverage = 0 %}
+    {% for user in userResults %}
+      {% if user.username == username %}
+      <tr>
+        <td>
+          <form method="post">
+            <input type="submit" name="quizTitle" value="{{ user.quizTitle }}">
+          </form>
+        </td>
+        <td> {{ user.points }} </td>
+        <td> {{ user.maxPoints }} </td>
+        {% set quizAverage = (user.points/user.maxPoints)*20 %}
+        {% set countQuizAverage = countQuizAverage+1 %}
+        {% set userAverage = userAverage+quizAverage %}
+        <td> {{ quizAverage }} </td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+    <tr>
+      <td> Moyenne général </td>
+      <td>  </td>
+      <td>  </td>
+      {% set userAverage = userAverage/countQuizAverage%}
+      <td> {{ userAverage }} </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function h5p_extension_theme($existing, $type, $theme, $path)
+{
+    return [
+    'h5p_extension_page' => [ /* Name given to call the template, the twig file should be named h5p-extension-page.html.twig */
+      'variables' =>
+        ['groups' => null, 'quizs' => null, 'users' => null, 'allGroups' => null],
+    ],
+    'h5p_extension_groupResult' => [
+      'variables' =>
+        ['usersResults' => null, 'usergroup' => null],
+    ],
+    'h5p_extension_userResults' => [
+      'variables' =>
+        ['userResults' => null, 'usergroup' => null, 'username' => null],
+    ],
+    'h5p_extension_quiz' => [
+      'variables' =>
+        ['quizs' => null, 'quizTitle' => null]
+    ],
+  ];
+}

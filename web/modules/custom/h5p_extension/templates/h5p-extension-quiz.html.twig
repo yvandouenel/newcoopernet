@@ -1,0 +1,39 @@
+{{ attach_library('h5p_extension/h5p-extension-lib') }}
+
+<div class="table-container quiz-select">
+    <h1 class="title-container">
+      {{ quizTitle }} -
+      <form method="post">
+        <input onclick="quizStorage()" type="submit" name="quiz" value="Quiz">
+      </form>
+    </h1>
+  <table>
+    <thead>
+      <tr>
+        <th> user Name </th>
+        <th> Points </th>
+        <th> Max Points </th>
+        <th> Moyenne </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set userAverage = 0 %}
+      {% for quiz in quizs %}
+        {% if quiz.quizTitle == quizTitle %}
+        <tr>
+          <td>
+            <form class="" action="" method="post">
+              <input type="submit" name="username" value="{{ quiz.username }}">
+              <input type="hidden" name="group" value="{{ quiz.usergroup }}">
+            </form>
+          </td>
+          <td> {{ quiz.points }} </td>
+          <td> {{ quiz.maxPoints }} </td>
+          {% set userAverage = (quiz.points/quiz.maxPoints)*20 %}
+          <td> {{ userAverage }} </td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

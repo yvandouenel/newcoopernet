@@ -1,0 +1,8 @@
+h5p_extension.h5p_extension_tab:
+  route_name: h5p_extension.h5p_extension
+  title: "h5p extension home"
+
+h5p_extension.resultsbygroup: #module name . link task name
+  route_name: h5p_extension.h5p_extension_resultbygroup # route to use (can be another module route)
+  title: "result by group"
+  base_route: entity.node.canonical

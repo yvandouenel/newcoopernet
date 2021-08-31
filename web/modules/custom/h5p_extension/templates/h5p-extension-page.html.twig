@@ -1,0 +1,110 @@
+{{ attach_library('h5p_extension/h5p-extension-lib') }} {# to atache the library h5p-extension-lib for custom css and js #}
+
+<div class="btn-container">
+  <button onclick="groupSelect()" class="btn"> Group </button>
+  <button onclick="userSelect()" class="btn"> User </button>
+  <button onclick="quizSelect()" class="btn"> Quiz </button>
+</div>
+
+<div class="table-container group-select hidden">
+  <h2> Group </h2>
+  <table>
+    <thead>
+      <tr>
+        <th> Group Name </th>
+        <th> User Number </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for group in groups %}
+        <tr>
+          <td>
+            <form action="" method="post">
+                <input type="submit" name="usergroup" value="{{ group.usergroup }}"/>
+            </form>
+          </td>
+          <td>{{ group.NbUser}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="table-container quiz-select hidden">
+  <h2> Trie par quiz </h2>
+  <table>
+    <thead>
+      <tr>
+        <th> Quiz title </th>
+        <th> Number user </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for quiz in quizs %}
+      <tr>
+        <td>
+           <form method="post">
+             <input type="submit" name="quizTitle" value="{{ quiz.quizTitle }}">
+           </form>
+        </td>
+        <td> {{ quiz.NbUser }} </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="table-container user-select hidden">
+  <h2> All user </h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Total points</th>
+        <th>Total maxPoints</th>
+        <th>Average</th>
+        <th>Group</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set userAverage = 0 %}
+      {% for user in users %}
+      <tr>
+        <td>
+          <form action="" method="post">
+            <input type="submit" name="username" value="{{ user.username }}"/>
+            <input type="hidden" name="group" value="{{ user.usergroup }}"/> {# name="group" used in this case instead of usergroup because of the controller - if usergroup was used the controller will send us in the userResults method instead of the userSelection method#}
+        </form>
+        </td>
+        <td>{{ user.totalPoints }}</td>
+        <td>{{ user.totalMaxPoints }}</td>
+        {% set userAverage = (user.totalPoints/user.totalMaxPoints)*20 %}
+        <td>{{ userAverage }}</td>
+        <td>
+          <form action="" method="post">
+            <input type="submit" name="usergroup" value="{{ user.usergroup }}"/>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="search-container">
+  <form autocomplete="off"> {# autocomplete='off' needs to be done to disable the browser’s automatic suggestions, which will get in the way of our own. #}
+    <div class="autocomplete" id="group-autocomplete">
+      {# onkeyup use to trigger the autocomplete function - we pass input parameter value#}
+      <div class="autocomplete-bar">
+        <input type="text" name="groups" id="groupSearchForm" placeholder="Search group..." onkeyup="groupAutocomplete(document.getElementById('groupSearchForm'))" >
+        <button type="submit" class="btnLoupeLogo">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16 loupeLogo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div data-entry-groups='{{ allGroups|json_encode|replace("'", "&#39;")|raw }}'>
+    test de l'envois de Data en Json
+</div>
