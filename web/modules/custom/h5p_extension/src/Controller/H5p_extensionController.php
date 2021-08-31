@@ -105,8 +105,8 @@ class H5p_extensionController extends ControllerBase
         JOIN h5p_points ON h5p_content.id = h5p_points.content_id
         JOIN node__field_h5p ON h5p_content.id = node__field_h5p.field_h5p_h5p_content_id
         JOIN users_field_data ON h5p_points.uid = users_field_data.uid
-        JOIN user__field_group ON users_field_data.uid = user__field_group.entity_id
-        JOIN taxonomy_term_field_data ON user__field_group.field_group_target_id = taxonomy_term_field_data.tid
+        JOIN user__field_groupe ON users_field_data.uid = user__field_groupe.entity_id
+        JOIN taxonomy_term_field_data ON user__field_groupe.field_groupe_target_id = taxonomy_term_field_data.tid
         WHERE users_field_data.uid !=0 AND users_field_data.name != 'Admin'
         GROUP BY username"); /* ANY_VALUE is used to take one of all value retrieved by the request wich is not a problem hir cause all the group value are the same */
         $usersResults = $query->fetchAll();
@@ -133,8 +133,8 @@ class H5p_extensionController extends ControllerBase
         JOIN h5p_points ON h5p_content.id = h5p_points.content_id
         JOIN node__field_h5p ON h5p_content.id = node__field_h5p.field_h5p_h5p_content_id
         JOIN users_field_data ON h5p_points.uid = users_field_data.uid
-        JOIN user__field_group ON users_field_data.uid = user__field_group.entity_id
-        JOIN taxonomy_term_field_data ON user__field_group.field_group_target_id = taxonomy_term_field_data.tid
+        JOIN user__field_groupe ON users_field_data.uid = user__field_groupe.entity_id
+        JOIN taxonomy_term_field_data ON user__field_groupe.field_groupe_target_id = taxonomy_term_field_data.tid
         WHERE users_field_data.uid !=0 AND users_field_data.name != 'Admin'
         ORDER BY quizTitle ASC
         ");
@@ -161,8 +161,8 @@ class H5p_extensionController extends ControllerBase
         FROM h5p_content
         JOIN h5p_points ON h5p_content.id = h5p_points.content_id
         JOIN users_field_data ON h5p_points.uid = users_field_data.uid
-        JOIN user__field_group ON users_field_data.uid = user__field_group.entity_id
-        JOIN taxonomy_term_field_data ON user__field_group.field_group_target_id = taxonomy_term_field_data.tid
+        JOIN user__field_groupe ON users_field_data.uid = user__field_groupe.entity_id
+        JOIN taxonomy_term_field_data ON user__field_groupe.field_groupe_target_id = taxonomy_term_field_data.tid
         WHERE users_field_data.uid !=0 AND users_field_data.name != 'Admin'
       ");
 
