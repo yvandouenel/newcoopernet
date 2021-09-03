@@ -7,6 +7,7 @@ namespace Drupal\h5p_extension\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\user\Entity\User;
+use Drupal\h5p_extension\Plugin\rest\resource\MemoDaily;
 
 /**
  *
@@ -15,6 +16,10 @@ class H5p_extensionController extends ControllerBase
 {
     public $database = '';
 
+    /**
+     * route to check where we come from and wich table have to been shown
+     * @return [type] the method used to get the twig
+     */
     public function routecontroller()
     { /* checking the parameter before selecting the right function used within the twig */
         $database = \Drupal::database();
@@ -29,11 +34,18 @@ class H5p_extensionController extends ControllerBase
             $quizTitle = $_POST['quizTitle'];
             $usergroup = $_POST['group'];
             return self::quiz($database, $quizTitle);
+        } elseif (isset($_POST['test'])) {
+            return self::test();
         } else {
             return self::page($database);
         }
     }
 
+    /**
+     * get all info for the home page (all users, all groups, all quiz)
+     * @param  [type] $database               connection to database
+     * @return array           all the varibale for the twig (allgroups, all user, all quiz)
+     */
     public function page($database)
     {
         /* Get the nb of user per groups */
@@ -94,6 +106,12 @@ class H5p_extensionController extends ControllerBase
         return $elements;
     }
 
+    /**
+     * get one group and all users in it
+     * @param  [type] $database                connection to database
+     * @param  string $usergroup               the usergroup selected
+     * @return array            group wich each user in it
+     */
     public function groupSelection($database, $usergroup)
     {
         $query = $database->query("
@@ -120,6 +138,13 @@ class H5p_extensionController extends ControllerBase
         return $elements;
     }
 
+    /**
+     * get all the results for one specified user
+     * @param  [type] $database                connection to database
+     * @param  string $usergroup               the usergroup
+     * @param  string $username                the user selected
+     * @return array            result by user for each quiz
+     */
     public function userResults($database, $usergroup, $username)
     {
         $query = $database->query("
@@ -150,6 +175,12 @@ class H5p_extensionController extends ControllerBase
         return $elements;
     }
 
+    /**
+     * get all the quizs with wich user did it and their results
+     * @param  [type] $database                connection to database
+     * @param  string $quizTitle
+     * @return array            all result by user for selected quiz
+     */
     public function quiz($database, $quizTitle)
     {
         $query = $database->query("
@@ -172,6 +203,34 @@ class H5p_extensionController extends ControllerBase
         '#theme' => 'h5p_extension_quiz',
         '#quizs' => $quizs,
         '#quizTitle' => $quizTitle,
+      ];
+
+        return $elements;
+    }
+
+    public function test()
+    {
+        //Get all user and all the title card
+        $query = $database->query(
+            "SELECT users_field_data.name AS userName,
+            node_field_data.title,
+            node__field_carte_colonne.field_carte_colonne_target_id,
+            taxonomy_term_field_data.name AS colonne
+            FROM `users_field_data`
+            JOIN node_field_data ON node_field_data.uid = users_field_data.uid
+            JOIN node__field_carte_colonne ON node__field_carte_colonne.entity_id = node_field_data.nid
+            JOIN taxonomy_term_field_data ON taxonomy_term_field_data.revision_id = node__field_carte_colonne.field_carte_colonne_target_id
+            ORDER BY colonne"
+        );
+
+        $result = $query->fetchAll();
+
+        $MemoDaily = new MemoDaily();
+        $memo = $MemoDaily->get();
+
+        $elements = [
+        '#theme' => 'h5p_extension_test',
+        '#memo' => $memo,
       ];
 
         return $elements;
