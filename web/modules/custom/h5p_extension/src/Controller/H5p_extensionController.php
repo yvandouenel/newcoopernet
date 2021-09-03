@@ -214,7 +214,6 @@ class H5p_extensionController extends ControllerBase
         $query = $database->query(
             "SELECT users_field_data.name AS userName,
             node_field_data.title,
-            node__field_carte_colonne.field_carte_colonne_target_id,
             taxonomy_term_field_data.name AS colonne
             FROM `users_field_data`
             JOIN node_field_data ON node_field_data.uid = users_field_data.uid
