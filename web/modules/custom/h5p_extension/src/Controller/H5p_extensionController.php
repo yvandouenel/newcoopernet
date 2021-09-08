@@ -210,11 +210,15 @@ class H5p_extensionController extends ControllerBase
 
     public function test()
     {
+        $cardColonne = 'Je sais parfaitement';
+        $userName = 'brondeau.timothee';
+
         $memoDaily = new MemoDaily();
-        $memo = $memoDaily->memoInfo();
+        $memo = $memoDaily->memoInfo($cardColonne, $userName);
 
         $elements = [
         '#theme' => 'h5p_extension_test',
+        '#cardColonne' => $cardColonne,
         '#memo' => $memo,
       ];
 

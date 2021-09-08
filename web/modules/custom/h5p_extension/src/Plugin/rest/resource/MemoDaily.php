@@ -11,8 +11,13 @@ class MemoDaily
 {
     private $database = '';
 
-
-    public function memoInfo()
+    /**
+     * retrieves the cards and their columns according to the chosen userName and the desired column
+     * @param  string $cardColonne               name of the column on which to sort
+     * @param  string $userName                  name of the user we want to retrieved the information
+     * @return array              element to be passed to the controler
+     */
+    public function memoInfo($cardColonne, $userName)
     {
         $database = \Drupal::database();
 
@@ -28,7 +33,7 @@ class MemoDaily
         // this gone be used to filter sql result, get all the userName from allUsers
         $usersFilter = array_column($allUsers, 'userName');
 
-        //Get users + cardTitle + mail + cardColonne
+        //Get users + cardTitle + mail + cardColonne => orderby cardTitle important to keep the same sort as $allCardTheme
         $query = $database->query(
             "SELECT users_field_data.name AS userName,
           users_field_data.mail AS email,
@@ -38,12 +43,12 @@ class MemoDaily
           JOIN node_field_data ON node_field_data.uid = users_field_data.uid
           JOIN node__field_carte_colonne ON node__field_carte_colonne.entity_id = node_field_data.nid
           JOIN taxonomy_term_field_data ON taxonomy_term_field_data.revision_id = node__field_carte_colonne.field_carte_colonne_target_id
-          WHERE users_field_data.name = 'brondeau.timothee'
+          WHERE users_field_data.name = '$userName'
           ORDER BY cardTitle"
         );
         $allCardColonne = $query->fetchAll();
 
-        //Get cardTitle + theme
+        //Get cardTitle + theme => orderby cardTitle important to keep the same sort as $allCardColonne
         $query = $database->query(
             "SELECT users_field_data.name AS userName,
           node_field_data.title AS cardTitle,
@@ -52,7 +57,7 @@ class MemoDaily
           JOIN node_field_data ON node_field_data.uid = users_field_data.uid
           JOIN node__field_carte_thematique ON node__field_carte_thematique.entity_id = node_field_data.nid
           JOIN taxonomy_term_field_data ON taxonomy_term_field_data.revision_id = node__field_carte_thematique.field_carte_thematique_target_id
-          WHERE users_field_data.name = 'brondeau.timothee'
+          WHERE users_field_data.name = '$userName'
           ORDER BY cardTitle"
         );
         $allCardTheme = $query->fetchAll();
@@ -65,41 +70,15 @@ class MemoDaily
             $i++;
         }
 
-        $aApprendre = [];
+        // Create tables according to the $cardColonne passed in the memoInfo argument
+        $selectedColumn = [];
         foreach ($allCardColonne as $items) {
-            if ($items->colonne == 'À apprendre') {
-                $aApprendre[] = $items;
+            if ($items->colonne == $cardColonne) {
+                $selectedColumn[] = $items;
             }
         }
 
-        $jeSaisUnPeu = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == 'Je sais un peu') {
-                $jeSaisUnPeu[] = $items;
-            }
-        }
-
-        $jeSaisBien = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == 'Je sais bien') {
-                $jeSaisBien[] = $items;
-            }
-        }
-
-        $jeSaisParfaitement = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == 'Je sais parfaitement') {
-                $jeSaisParfaitement[] = $items;
-            }
-        }
-
-        $aApprendre = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == 'À apprendre') {
-                $aApprendre[] = $items;
-            }
-        }
-
+        // get current user name + uid
         $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
         $userName = $current_user->getUsername();
         $uid = $current_user->get('uid')->value;
@@ -107,30 +86,11 @@ class MemoDaily
         $elements = [
           'userName' => $userName,
           'allUsers' => $allUsers,
-          'allMemoInfo' => $allMemoInfo,
           'allCardColonne' => $allCardColonne,
-          'aApprendre' => $aApprendre,
-          'jeSaisUnPeu' => $jeSaisUnPeu,
-          'jeSaisBien' => $jeSaisBien,
-          'jeSaisParfaitement' => $jeSaisParfaitement,
+          'selectedColumn' => $selectedColumn,
           'userFilter' => $usersFilter,
         ];
 
         return $elements;
-    }
-
-    /**
-     * Separe en tableau par colonne les cartes en fonction du user
-     * @param string $arrayTitle  titre de la colonne a passer en argument pour créer la selection sur celle-ci uniquement
-     * @param string $user        userName
-     */
-    public function MemoColonne($arrayTitle, $userName)
-    {
-        $arrayTitle = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == "'" . $arrayTitle . "'") {
-                $arrayTitle[] = $items;
-            }
-        }
     }
 }

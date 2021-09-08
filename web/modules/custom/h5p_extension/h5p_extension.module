@@ -24,7 +24,7 @@ function h5p_extension_theme($existing, $type, $theme, $path)
     ],
     'h5p_extension_test' => [
       'variables' =>
-       ['memo' => null], /* array with all memmopus info */
+       ['memo' => null, 'cardColonne' => null], /* array with all memmopus info */
     ],
   ];
 }
