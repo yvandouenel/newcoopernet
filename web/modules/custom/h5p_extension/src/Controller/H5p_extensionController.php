@@ -210,22 +210,8 @@ class H5p_extensionController extends ControllerBase
 
     public function test()
     {
-        //Get all user and all the title card
-        $query = $database->query(
-            "SELECT users_field_data.name AS userName,
-            node_field_data.title,
-            taxonomy_term_field_data.name AS colonne
-            FROM `users_field_data`
-            JOIN node_field_data ON node_field_data.uid = users_field_data.uid
-            JOIN node__field_carte_colonne ON node__field_carte_colonne.entity_id = node_field_data.nid
-            JOIN taxonomy_term_field_data ON taxonomy_term_field_data.revision_id = node__field_carte_colonne.field_carte_colonne_target_id
-            ORDER BY colonne"
-        );
-
-        $result = $query->fetchAll();
-
-        $MemoDaily = new MemoDaily();
-        $memo = $MemoDaily->get();
+        $memoDaily = new MemoDaily();
+        $memo = $memoDaily->memoInfo();
 
         $elements = [
         '#theme' => 'h5p_extension_test',

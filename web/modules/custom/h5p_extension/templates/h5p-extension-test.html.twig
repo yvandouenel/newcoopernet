@@ -1,8 +1,75 @@
 {{ attach_library('h5p_extension/h5p-extension-lib') }}
 
-<p> Je suis dans le twig test</p>
-
-
-<h1>{{ memo.test }}</h1>
-
 <p>Je suis le currentUser {{ memo.userName }}</p>
+
+<h1>A apprendre</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titre de la carte</th>
+      <th>theme</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in memo.aApprendre %}
+    <tr>
+      <td> {{ item.cardTitle }}</td>
+      <td> {{ item.theme }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1>Je sais un peu</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titre de la carte</th>
+      <th>theme</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in memo.jeSaisUnPeu %}
+    <tr>
+      <td> {{ item.cardTitle }}</td>
+      <td> {{ item.theme }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h1>Je sais bien</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titre de la carte</th>
+      <th>theme</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in memo.jeSaisBien %}
+    <tr>
+      <td> {{ item.cardTitle }}</td>
+      <td> {{ item.theme }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h1>Je sais parfaitment</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titre de la carte</th>
+      <th>theme</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in memo.jeSaisParfaitement %}
+    <tr>
+      <td> {{ item.cardTitle }}</td>
+      <td> {{ item.theme }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
