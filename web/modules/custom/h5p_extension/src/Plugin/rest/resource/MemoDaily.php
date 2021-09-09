@@ -70,14 +70,7 @@ class MemoDaily
             $i++;
         }
 
-        $selectedColumn = [];
-        foreach ($allCardColonne as $items) {
-            if ($items->colonne == $cardColonneTitle) {
-                $selectedColumn[] = $items;
-            }
-        }
-
-        //self::selectedColumn($allCardColonne, $cardColonneTitle);
+        $selectedColumn = $this->selectedColumn($allCardColonne, $cardColonneTitle);
 
         // get the taxonomy for the card_column to boucle on and make all 4 array ('A apprendre', 'Je sais un peu', 'Je sais beaucoup', 'Je sais parfaitement')
         /*$vid = 'carte_colonne';
@@ -96,21 +89,20 @@ class MemoDaily
         return $elements;
     }
 
-
     /**
      *  Create tables according to the $cardColonne passed in the memoInfo argument
      * @param  array $cardColonne              content all info from memopus
      * @param  string $cardColonneTitle               title of the colonne selected
     * @return array                   1 array by colonne
-
-    public function selectedColumn($allCardColonne, $cardColonneTitle)
+    */
+    protected function selectedColumn($allCardColonne, $cardColonneTitle)
     {
+        $selectedColumn = [] ;
         foreach ($allCardColonne as $items) {
-            $selectedColumn = [] ;
             if ($items->colonne == $cardColonneTitle) {
                 $selectedColumn[] = $items;
             }
         }
         return $selectedColumn;
-    }*/
+    }
 }
