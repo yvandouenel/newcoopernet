@@ -17,7 +17,7 @@ class MemoDaily
      * @param  string $userName                  name of the user we want to retrieved the information
      * @return array              element to be passed to the controler
      */
-    public function memoInfo($cardColonne, $userName)
+    public function memoInfo($cardColonneTitle, $userName)
     {
         $database = \Drupal::database();
 
@@ -70,21 +70,23 @@ class MemoDaily
             $i++;
         }
 
-        // Create tables according to the $cardColonne passed in the memoInfo argument
         $selectedColumn = [];
         foreach ($allCardColonne as $items) {
-            if ($items->colonne == $cardColonne) {
+            if ($items->colonne == $cardColonneTitle) {
                 $selectedColumn[] = $items;
             }
         }
 
-        // get current user name + uid
-        $current_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-        $userName = $current_user->getUsername();
-        $uid = $current_user->get('uid')->value;
+        //self::selectedColumn($allCardColonne, $cardColonneTitle);
+
+        // get the taxonomy for the card_column to boucle on and make all 4 array ('A apprendre', 'Je sais un peu', 'Je sais beaucoup', 'Je sais parfaitement')
+        /*$vid = 'carte_colonne';
+        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+        foreach ($terms as $term) {
+            selectedColumn($term->name);
+        }*/
 
         $elements = [
-          'userName' => $userName,
           'allUsers' => $allUsers,
           'allCardColonne' => $allCardColonne,
           'selectedColumn' => $selectedColumn,
@@ -93,4 +95,22 @@ class MemoDaily
 
         return $elements;
     }
+
+
+    /**
+     *  Create tables according to the $cardColonne passed in the memoInfo argument
+     * @param  array $cardColonne              content all info from memopus
+     * @param  string $cardColonneTitle               title of the colonne selected
+    * @return array                   1 array by colonne
+
+    public function selectedColumn($allCardColonne, $cardColonneTitle)
+    {
+        foreach ($allCardColonne as $items) {
+            $selectedColumn = [] ;
+            if ($items->colonne == $cardColonneTitle) {
+                $selectedColumn[] = $items;
+            }
+        }
+        return $selectedColumn;
+    }*/
 }
