@@ -3,7 +3,7 @@
 namespace Drupal\Tests\book\Kernel\Plugin\migrate\source;
 
 use Drupal\Tests\migrate\Kernel\MigrateSqlSourceTestBase;
-use Drupal\book\Plugin\migrate\source\d6\Book as D6Book;
+use Drupal\book\Plugin\migrate\source\Book as D6Book;
 
 /**
  * @covers \Drupal\book\Plugin\migrate\source\Book
