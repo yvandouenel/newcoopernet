@@ -19,14 +19,12 @@
         "php": ">=7.0.8",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.27",
         "drupal/admin_toolbar_tools": "^1.27",
         "drupal/antibot": "^1.2",
         "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/book_tree_menu": "^1.0",
         "drupal/bootstrap": "^3.20",
-        "drupal/config_installer": "^1.8",
         "drupal/config_update": "^1.6",
         "drupal/console": "^1.0.2",
         "drupal/contact_storage": "^1.0@beta",
@@ -69,7 +67,14 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/console-extend-plugin": true,
+            "cweagans/composer-patches": true,
+            "zaporylie/composer-drupal-optimizations": true
+        }
     },
     "autoload": {
         "classmap": [
