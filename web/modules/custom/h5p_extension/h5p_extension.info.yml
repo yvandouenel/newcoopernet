@@ -1,5 +1,0 @@
-name: h5p extension
-type: module
-description: "Extension de fonctionnalitées h5p pour Drupal 8"
-package: My modules
-core: 8.x

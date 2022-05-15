@@ -1,5 +1,0 @@
-h5p_extension.h5p_extension:
-  title: 'Link menu to h5p extension'
-  description: 'Link to h5p extension'
-  route_name: h5p_extension.h5p_extension
-  menu_name: main #add to the main menu next to default HOME menu

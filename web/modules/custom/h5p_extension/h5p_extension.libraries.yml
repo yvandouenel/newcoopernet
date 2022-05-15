@@ -1,7 +1,0 @@
-h5p-extension-lib: #name of the library
-  version: 1.x
-  css:
-    theme:
-      css/results.min.css: {}
-  js:
-    js/results.js: {}
