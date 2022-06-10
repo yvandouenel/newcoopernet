@@ -24,7 +24,7 @@ class ListUsers extends ResourceBase {
     $users = User::loadMultiple();
     $users_simple = [];
     foreach ($users as $user) {
-          $user_simple = array("uid" => $user->get('uid')->value, "uname" => $user->getUsername());
+          $user_simple = array("uid" => $user->get('uid')->value, "uname" => \Drupal\user\UserInterface::getDisplayName()  );
           array_push($users_simple,$user_simple);
     }
     return new JsonResponse($users_simple);
