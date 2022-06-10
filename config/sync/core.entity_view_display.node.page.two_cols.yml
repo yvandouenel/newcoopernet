@@ -18,17 +18,17 @@ bundle: page
 mode: two_cols
 content:
   body:
-    label: above
     type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
-  links:
     weight: 101
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_type_de_prestation: true
   langcode: true

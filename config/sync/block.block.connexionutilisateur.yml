@@ -10,17 +10,17 @@ dependencies:
 id: connexionutilisateur
 theme: coopernet
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: user_login_block
 settings:
   id: user_login_block
   label: 'Connexion utilisateur'
-  provider: user
   label_display: visible
+  provider: user
 visibility:
   request_path:
     id: request_path
-    pages: /formation/PRF-lot-409
     negate: false
     context_mapping: {  }
+    pages: /formation/PRF-lot-409

@@ -11,12 +11,12 @@ _core:
 id: coopernet_breadcrumbs
 theme: coopernet
 region: content
-weight: -8
+weight: -11
 provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: 'Fils d''Ariane'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

@@ -21,6 +21,5 @@ configuration:
   formats:
     - hal_json
     - json
-    - xml
   authentication:
     - basic_auth

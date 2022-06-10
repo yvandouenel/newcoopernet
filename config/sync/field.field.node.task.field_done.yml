@@ -1,0 +1,23 @@
+uuid: d74e284f-c83e-4905-b35b-cfd5cc6b78e6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_done
+    - node.type.task
+id: node.task.field_done
+field_name: field_done
+entity_type: node
+bundle: task
+label: Validée
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: vrai
+  off_label: faux
+field_type: boolean

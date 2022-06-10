@@ -17,8 +17,8 @@ plugin: 'block_content:fb5302b0-0e4c-4adb-9be1-3b806980b2dc'
 settings:
   id: 'block_content:fb5302b0-0e4c-4adb-9be1-3b806980b2dc'
   label: Adresse
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

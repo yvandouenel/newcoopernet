@@ -6,6 +6,7 @@ dependencies:
     - basic_auth
     - memo
     - serialization
+    - user
 id: is_logged
 plugin_id: is_logged
 granularity: resource
@@ -16,3 +17,4 @@ configuration:
     - json
   authentication:
     - basic_auth
+    - cookie

@@ -19,22 +19,22 @@ plugin: 'block_content:239e864c-cf1f-4d16-a1f1-7bea9acd23bf'
 settings:
   id: 'block_content:239e864c-cf1f-4d16-a1f1-7bea9acd23bf'
   label: 'index formations PRF'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: "/formation/*\r\n/user/*"
     negate: false
     context_mapping: {  }
+    pages: "/formation/*\r\n/user/*"
   user_role:
     id: user_role
-    roles:
-      authenticated: authenticated
-      administrator: administrator
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      administrator: administrator

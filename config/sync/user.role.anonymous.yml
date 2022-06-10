@@ -1,7 +1,20 @@
 uuid: 730a6c45-0143-4b1f-8e22-e62505966e4c
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - rest.resource.is_logged
+    - rest.resource.list_cartes_term
+    - rest.resource.theme_terms
+    - rest.resource.user_registration
+  module:
+    - comment
+    - contact
+    - filter
+    - rest
+    - search
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous

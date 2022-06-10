@@ -1,7 +1,13 @@
 uuid: c18c09f3-ea94-4afe-b23c-9f1201d23a9e
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.book
+  module:
+    - book
+    - node
+    - system
 id: formateur
 label: formateur
 weight: -8

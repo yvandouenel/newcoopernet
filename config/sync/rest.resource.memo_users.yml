@@ -1,0 +1,18 @@
+uuid: fb3c8da0-821d-4e0a-a18b-068aeff9edd3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - memo
+    - serialization
+id: memo_users
+plugin_id: memo_users
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

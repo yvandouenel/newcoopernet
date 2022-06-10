@@ -19,22 +19,22 @@ plugin: 'block_content:85ae90f1-73c4-45b1-88ae-9bb1b5f88de3'
 settings:
   id: 'block_content:85ae90f1-73c4-45b1-88ae-9bb1b5f88de3'
   label: 'Principaux clients'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '/formation/*'
     negate: true
     context_mapping: {  }
+    pages: '/formation/*'
   user_role:
     id: user_role
-    roles:
-      anonymous: anonymous
-      administrator: administrator
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      administrator: administrator

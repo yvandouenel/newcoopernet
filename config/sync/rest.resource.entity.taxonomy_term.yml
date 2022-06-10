@@ -1,0 +1,22 @@
+uuid: 8a7e389b-1ab3-48c2-97a0-b60842fead4f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - hal
+    - serialization
+    - taxonomy
+id: entity.taxonomy_term
+plugin_id: 'entity:taxonomy_term'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+  formats:
+    - hal_json
+    - json
+  authentication:
+    - basic_auth

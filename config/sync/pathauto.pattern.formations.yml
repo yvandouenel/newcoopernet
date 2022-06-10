@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: 'formations/[node:title]'
 selection_criteria:
   d6eaf612-ec8e-4fbc-ae9a-7f7d590633ba:
-    id: node_type
-    bundles:
-      formation: formation
+    id: 'entity_bundle:node'
     negate: false
+    uuid: d6eaf612-ec8e-4fbc-ae9a-7f7d590633ba
     context_mapping:
       node: node
-    uuid: d6eaf612-ec8e-4fbc-ae9a-7f7d590633ba
+    bundles:
+      formation: formation
 selection_logic: and
 weight: -5
 relationships: {  }

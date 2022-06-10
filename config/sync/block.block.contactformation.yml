@@ -1,0 +1,31 @@
+uuid: e2418335-db0c-4d5c-93d2-1c8d5c0a7906
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:397ab27f-e9aa-49ce-b113-3b98deaf66dc'
+  module:
+    - block_content
+    - system
+  theme:
+    - coopernet
+id: contactformation
+theme: coopernet
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:397ab27f-e9aa-49ce-b113-3b98deaf66dc'
+settings:
+  id: 'block_content:397ab27f-e9aa-49ce-b113-3b98deaf66dc'
+  label: Inscription
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /formation/PRF-lot-409

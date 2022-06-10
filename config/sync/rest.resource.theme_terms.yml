@@ -6,6 +6,7 @@ dependencies:
     - basic_auth
     - memo
     - serialization
+    - user
 id: theme_terms
 plugin_id: theme_terms
 granularity: resource
@@ -16,3 +17,4 @@ configuration:
     - json
   authentication:
     - basic_auth
+    - cookie

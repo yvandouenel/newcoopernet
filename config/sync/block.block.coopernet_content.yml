@@ -11,12 +11,12 @@ _core:
 id: coopernet_content
 theme: coopernet
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
   label: 'Contenu de la page principale'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

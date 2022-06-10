@@ -2,11 +2,11 @@ uuid: 1482dc2e-2445-4629-a356-1b168a91cb93
 langcode: fr
 status: true
 dependencies:
+  module:
+    - menu_ui
   enforced:
     module:
       - book
-  module:
-    - menu_ui
 third_party_settings:
   menu_ui:
     available_menus:

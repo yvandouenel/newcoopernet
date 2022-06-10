@@ -1,0 +1,18 @@
+uuid: 40079a05-cd5f-4ddc-99d8-d0537c054b72
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - memo
+    - serialization
+id: pronunciation
+plugin_id: pronunciation
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

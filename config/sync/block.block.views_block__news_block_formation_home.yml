@@ -20,13 +20,13 @@ plugin: 'views_block:news-block_formation_home'
 settings:
   id: 'views_block:news-block_formation_home'
   label: ''
-  provider: views
   label_display: visible
+  provider: views
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: '<front>'

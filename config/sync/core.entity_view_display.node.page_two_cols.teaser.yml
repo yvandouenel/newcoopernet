@@ -15,10 +15,10 @@ bundle: page_two_cols
 mode: teaser
 content:
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   field_col_1: true
   field_col_2: true

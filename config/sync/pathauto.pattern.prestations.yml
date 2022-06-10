@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
   5199f0d0-a1b5-414b-870c-cfc282bf12e1:
-    id: node_type
-    bundles:
-      prestation: prestation
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 5199f0d0-a1b5-414b-870c-cfc282bf12e1
     context_mapping:
       node: node
-    uuid: 5199f0d0-a1b5-414b-870c-cfc282bf12e1
+    bundles:
+      prestation: prestation
 selection_logic: and
 weight: -5
 relationships: {  }

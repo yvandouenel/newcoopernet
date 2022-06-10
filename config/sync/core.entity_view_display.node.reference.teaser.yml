@@ -24,15 +24,15 @@ mode: teaser
 content:
   field_gallerie_images:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: large
       image_link: content
+      image_style: large
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 0
+    region: content
 hidden:
   body: true
   field_prestation: true

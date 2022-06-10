@@ -1,7 +1,32 @@
 uuid: 6a31bc5d-e938-4ac4-9e76-878d6935af51
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.carte
+    - rest.resource.edit_term
+    - rest.resource.is_logged
+    - rest.resource.list_cartes
+    - rest.resource.list_cartes_term
+    - rest.resource.memo_users
+    - rest.resource.pronunciation
+    - rest.resource.theme_terms
+    - rest.resource.user_registration
+    - taxonomy.vocabulary.carte_colonne
+    - taxonomy.vocabulary.carte_thematique
+  module:
+    - comment
+    - contact
+    - file
+    - filter
+    - node
+    - rest
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
@@ -16,13 +41,20 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'create carte content'
+  - 'create terms in carte_colonne'
+  - 'create terms in carte_thematique'
   - 'delete own carte content'
+  - 'delete terms in carte_thematique'
   - 'edit any carte content'
+  - 'edit terms in carte_thematique'
   - 'post comments'
   - 'restful get is_logged'
   - 'restful get list_cartes'
   - 'restful get list_cartes_term'
+  - 'restful get memo_users'
+  - 'restful get pronunciation'
   - 'restful get theme_terms'
+  - 'restful post edit_term'
   - 'restful post user_registration'
   - 'search content'
   - 'skip comment approval'

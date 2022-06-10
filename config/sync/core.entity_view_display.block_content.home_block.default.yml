@@ -17,23 +17,23 @@ bundle: home_block
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_titre_lien:
-    weight: 0
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -42,7 +42,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 0
     region: content
 hidden:
   langcode: true

@@ -1,0 +1,20 @@
+uuid: f2bfceb1-cb69-41a1-8593-d87f56534dd0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - hal
+    - memo
+    - serialization
+id: edit_term
+plugin_id: edit_term
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - hal_json
+    - json
+  authentication:
+    - basic_auth

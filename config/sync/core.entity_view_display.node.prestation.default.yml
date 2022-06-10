@@ -19,23 +19,23 @@ bundle: prestation
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_contact:
-    weight: 2
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 2
     region: content
   field_gallerie_images:
-    weight: 3
+    type: juicebox_formatter
     label: hidden
     settings:
       image_style: ''
@@ -50,23 +50,23 @@ content:
       jlib_showOpenButton: true
       jlib_showExpandButton: true
       jlib_showThumbsButton: true
+      jlib_useThumbDots: false
+      jlib_useFullscreenExpand: '0'
       manual_config: ''
-      incompatible_file_action: show_icon_and_link
+      custom_parent_classes: ''
+      apply_markup_filter: true
       linkurl_source: ''
       linkurl_target: _blank
-      custom_parent_classes: ''
-      jlib_useFullscreenExpand: '0'
-      jlib_useThumbDots: false
-      apply_markup_filter: true
+      incompatible_file_action: show_icon_and_link
     third_party_settings: {  }
-    type: juicebox_formatter
+    weight: 3
     region: content
   field_referencement:
-    weight: 4
+    type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    weight: 4
     region: content
 hidden:
   langcode: true

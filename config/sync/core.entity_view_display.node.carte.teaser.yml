@@ -21,23 +21,18 @@ targetEntityType: node
 bundle: carte
 mode: teaser
 content:
-  body:
+  field_carte_reponse:
+    type: text_default
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
+  body: true
   field_carte_colonne: true
   field_carte_explication: true
   field_carte_question: true
-  field_carte_reponse: true
   field_carte_thematique: true
   langcode: true
+  links: true

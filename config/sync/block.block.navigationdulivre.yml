@@ -1,0 +1,29 @@
+uuid: 94b8fb99-94ba-45e9-8499-987c84412f2a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - book
+    - ctools
+  theme:
+    - coopernet
+id: navigationdulivre
+theme: coopernet
+region: content
+weight: -10
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Navigation du livre'
+  label_display: '0'
+  provider: book
+  block_mode: 'all pages'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      book: book
